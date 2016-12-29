@@ -1,7 +1,7 @@
 # elore
 
 The internet's premier coding community.
-<img src="http://elore.io/img/gary.png" width="200px" height="200px" style="float: left" />
+![ScreenShot](http://imgur.com/aIpmlTl)
 
 ## Installation
 

@@ -2,7 +2,7 @@
 
 The internet's premier coding community.
 
-![ScreenShot](http://elore.io/img/gary.png)
+![ScreenShot](http://elore.io/img/gary.png | width=100)
 
 ## Installation
 

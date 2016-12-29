@@ -1,6 +1,6 @@
 # elore
 
-The internet's premier coding community.
+The internet's premier coding community.  
 ![ScreenShot](http://i.imgur.com/aIpmlTl.png)
 
 ## Installation

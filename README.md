@@ -1,7 +1,7 @@
 # elore
 
 The internet's premier coding community.
-![ScreenShot](http://imgur.com/aIpmlTl)
+![ScreenShot](http://i.imgur.com/aIpmlTl.png)
 
 ## Installation
 

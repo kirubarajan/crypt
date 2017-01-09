@@ -69,7 +69,7 @@ class Navigation extends Component {
 
       </Navbar>
 
-    );
+    )
 
   }
 

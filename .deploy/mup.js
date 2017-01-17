@@ -3,12 +3,9 @@ module.exports = {
     one: {
       host: '159.203.31.17',
       username: 'root',
-      // pem:
       password: 'garyeatsass'
-      // or leave blank for authenticate from ssh-agent
     }
   },
-
   meteor: {
     name: 'elore',
     path: '../../elore',

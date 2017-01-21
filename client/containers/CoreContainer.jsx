@@ -45,7 +45,7 @@ class CoreContainer extends React.Component {
     siteStore.createCurrentSite(id);
 
     // launch screen with tile info
-    browserHistory.push('/config');
+    browserHistory.push('/config/');
   }
 
   render() {

@@ -5,7 +5,11 @@ $header: #C18A2E;
 $grey: #D4D5D6;
 $signin: #554F92;
 $dark-grey: #A9A9AB;
+<<<<<<< HEAD
 $input: #969696;
+=======
+$input: #969696 ;
+>>>>>>> master
 $input-focus: #554F92;
 
 body {
@@ -42,7 +46,7 @@ Form {
   text-align: center !important;
 }
 
-Input {
+input {
   margin-left: auto !important;
   margin-right: auto !important;
   border-color: $grey !important;
@@ -55,8 +59,9 @@ Input {
   transition: border 0.3s !important;
 }
 
-Input:focus {
-  border-bottom: solid 2px $input-focus !important ;
+input:focus {
+  border-bottom: solid 2px $input-focus !important;
+  outline: none;
 }
 
 Button {

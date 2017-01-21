@@ -3,10 +3,11 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "deploy": "cd .deploy && mup deploy"
+    "deploy": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy plsencrypt.me --settings settings.json"
   },
   "dependencies": {
     "babel-runtime": "6.18.0",
+    "base64url": "^2.0.0",
     "bcrypt": "^0.8.7",
     "jquery": "^3.1.1",
     "meteor-node-stubs": "^0.2.4",
@@ -18,6 +19,7 @@
     "react-dom": "^15.4.1",
     "react-router": "^3.0.0",
     "reactstrap": "^3.9.5",
+    "secure-random": "^1.1.1",
     "tether": "^1.3.7"
   }
 }

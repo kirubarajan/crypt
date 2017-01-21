@@ -1,11 +1,8 @@
 {
-  "public": {},
-  "private": {
-    "oAuth": {
-      "github": {
-        "clientId": "2b87b3d9b3920740b1b1",
-        "secret": "34d25658167c25bccda0ba824db73e89582ec02c"
-      }
-    }
-  }
+  "galaxy.meteor.com": {
+     "env": {
+       "ROOT_URL": "https://plsencrypt.me",
+       "MONGO_URL": "mongodb://client:jeffeatsass@ds117889.mlab.com:17889/plsencrypt"
+     }
+   }
 }

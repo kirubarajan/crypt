@@ -24,15 +24,15 @@ class CoreContainer extends React.Component {
       if (error) {
         console.log(error.reason);
       } else {
-        console.log('adding the website...', website);
+        console.log('adding a website...', website);
       }
     });
 
     const sites = this.props.profiles;
+    console.log(sites);
 
     // update store with email and pass, and unique id
-    siteStore.createSite(sites);
-
+      siteStore.createSite(sites);
   }
 
   handleDelete(event, siteID) {
@@ -45,25 +45,24 @@ class CoreContainer extends React.Component {
     siteStore.createCurrentSite(id);
 
     // launch screen with tile info
-    browserHistory.push('/config/');
+    browserHistory.push('/config');
   }
 
   render() {
     return (
-      <div>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col col-sm-7 site-creator-container">
-              <SiteCreator
-                onCreate={this.handleCreate.bind(this)}/>
-            </div>
-            <div className="col col-sm-5">
-              <SiteList
-                sites={this.state.sites}
-                onDelete={this.handleDelete}
-                onTileClick={this.handleTileClick}/>
-              {/* sites={this.state.sites} */}
-            </div>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col col-sm-7 site-creator-container">
+            <SiteCreator
+              onCreate={this.handleCreate.bind(this)}/>
+          </div>
+
+          <div className="col col-sm-5">
+            <SiteList
+              sites={this.state.sites}
+              onDelete={this.handleDelete}
+              onTileClick={this.handleTileClick}/>
+            {/* sites={this.state.sites} */}
           </div>
         </div>
       </div>

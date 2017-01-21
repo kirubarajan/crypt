@@ -17,7 +17,7 @@ class Signup extends React.Component {
         }
         else {
           console.log(Meteor.userId());
-          browserHistory.push('/core');
+          browserHistory.push('/accounts');
         }
       });
       console.log(Meteor.users.findOne({username: email}));

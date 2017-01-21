@@ -26,7 +26,6 @@ Meteor.methods({
 
     return Profiles.insert({
       name,
-      url,
       email,
       password,
       owner: this.userId

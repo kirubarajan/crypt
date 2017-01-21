@@ -22,7 +22,7 @@ class SiteStore extends EventEmitter {
   findCurrent() {
     for (let i = 0; i < this.sites.length; i++) {
       if (this.sites[i]._id === this.currentsite) {
-        console.log(this.sites[i]);
+        console.log('this is the current site', this.sites[i]);
         return this.sites[i];
       }
     }

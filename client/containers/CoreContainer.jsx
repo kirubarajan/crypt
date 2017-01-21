@@ -9,7 +9,7 @@ class CoreContainer extends React.Component {
     console.log('works');
     console.log(website, url);
     // send backend this info
-      const object = Meteor.call('accounts.insert', website, url);
+      const object = Meteor.call('profiles.insert', website, url);
       console.log(object);
     // update state
       // this.setState({

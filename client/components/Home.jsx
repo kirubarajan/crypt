@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Link } from 'react-router';
 
 class Home extends React.Component {
   render() {
@@ -15,7 +16,10 @@ class Home extends React.Component {
            <Label for="examplePassword">Password</Label>
            <Input type="password" name="password" id="examplePassword" placeholder="password" />
          </FormGroup>
-         <Button>Submit</Button>
+         <Button>Enter</Button>
+         <Link to='/signup'>
+           <Button>Signup</Button>
+         </Link>
        </Form>
      </div>
     )

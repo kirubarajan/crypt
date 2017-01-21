@@ -1,16 +1,13 @@
-# elore
+# TBA
 
-The internet's premier coding community.
-
-![ScreenShot](http://i.imgur.com/aIpmlTl.png)
+LastPass++
 
 ## Installation
 
 1. Clone the project repository
 2. `cd` into the project directory
 3. Run `meteor npm install` to install all dependencies.
-4. Run the `meteor` command (`npm install -g meteor` if you do not have Meteor installed) to run local server
-5. Access project at `localhost:3000`
+4. Access project at `localhost:3000`
 
 ## Dependencies
 

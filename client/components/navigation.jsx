@@ -41,7 +41,13 @@ class Navigation extends Component {
 
           <NavItem>
 
-            <NavLink href="/gary"> Gary </NavLink>
+            <NavLink href="/browse"> Browse </NavLink>
+
+          </NavItem>
+
+          <NavItem>
+
+            <NavLink href="/portfolio"> Portfolio </NavLink>
 
           </NavItem>
 
@@ -51,13 +57,23 @@ class Navigation extends Component {
 
               <DropdownToggle caret>
 
-                Account
+                Arun
 
               </DropdownToggle>
 
               <DropdownMenu>
 
-                <DropdownItem header> <AccountsUIWrapper /> </DropdownItem>
+                <DropdownItem header> Account </DropdownItem>
+
+                <DropdownItem> Messages </DropdownItem>
+
+                <DropdownItem> Profile </DropdownItem>
+
+                <DropdownItem> Settings </DropdownItem>
+
+                <DropdownItem divider />
+
+                <DropdownItem> <AccountsUIWrapper /> </DropdownItem>
 
               </DropdownMenu>
 

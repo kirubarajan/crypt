@@ -4,14 +4,7 @@ import SiteCreator from '../components/SiteCreator';
 import SiteList from '../components/SiteList'
 
 class CoreContainer extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      sites: []
-    };
-  }
-
-  // update state - specifically array of cards
+  // add website to meteor collection
   handleCreate(website, url) {
     console.log('works');
     console.log(website, url);

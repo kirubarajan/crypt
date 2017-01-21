@@ -1,4 +1,5 @@
 import { Mongo } from 'meteor/mongo';
+import secureRandom from 'secure-random';
 
 Meteor.methods({
 

@@ -4,20 +4,22 @@ import SiteCreator from '../components/SiteCreator';
 import SiteList from '../components/SiteList'
 
 class CoreContainer extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      sites: []
-    };
-  }
-
-  // update state - specifically array of cards
+  // add website to meteor collection
   handleCreate(website, url) {
     console.log('works');
     console.log(website, url);
-    //send backend this info
+    // send backend this info
       const object = Meteor.call('accounts.insert', website, url);
       console.log(object);
+    // update state
+      // this.setState({
+      //   sites = Accounts.find({owner: Meteor.userId()}).fetch();
+      // });
+  }
+
+  handleDelete(event, siteID) {
+    event.preventDefault();
+    // delete site with meteor method
   }
 
   render() {
@@ -30,7 +32,8 @@ class CoreContainer extends React.Component {
           </div>
 
           <div className="col col-sm-6">
-            <SiteList />
+            <SiteList onDelete={this.handleDelete}/>
+            {/* sites={this.state.sites} */}
           </div>
         </div>
       </div>

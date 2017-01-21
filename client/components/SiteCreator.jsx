@@ -2,26 +2,6 @@ import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class SiteCreator extends React.Component {
-  constructor() {
-    super();
-    // this.state = {
-    //   websiteValue: '',
-    //   urlValue: ''
-    // };
-  }
-
-  // handleWebsiteChange(e) {
-  //   this.setState({
-  //     websiteValue: e.target.value
-  //   })
-  // }
-  //
-  // handleUrlChange(e) {
-  //   this.setState({
-  //     urlValue: e.target.value
-  //   })
-  // }
-
   onCreate(event) {
     event.preventDefault();
     const website = this.refs.website.value;

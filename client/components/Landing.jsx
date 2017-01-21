@@ -10,7 +10,7 @@ class Landing extends React.Component {
         <h1 className="landing-header"> CRYPT </h1>
         <p className="landing-paragraph"> easily  <span className="create">create</span> & <span className="manage">manage</span> secure emails & passwords.</p>
         <img className="landing-img center-block" src="http://i.imgur.com/X24R62E.png" />
-        <Link to='/'>
+        <Link to='/home'>
           <Button className="hvr-shutter-out-horizontal">BEGIN</Button>
         </Link>
       </div>

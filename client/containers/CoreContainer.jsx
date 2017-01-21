@@ -1,34 +1,52 @@
 import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import { browserHistory } from 'react-router';
+
+import { createContainer } from 'meteor/react-meteor-data';
+import { Profiles } from '../../imports/collections/profiles';
 
 import SiteCreator from '../components/SiteCreator';
 import SiteList from '../components/SiteList'
+
+import SitesStore from '../stores/SitesStore';
 
 class CoreContainer extends React.Component {
   constructor() {
     super();
     this.state = {
       value: '',
-      copied: false
+      copied: false,
     };
   }
 
-  // add website to meteor collection
   handleCreate(website, url) {
-    console.log('works');
-    console.log(website, url);
-    // send backend this info
-      const object = Meteor.call('profiles.insert', website, url);
-      console.log(object);
-    // update state
-      // this.setState({
-      //   sites = Accounts.find({owner: Meteor.userId()}).fetch();
-      // });
+    // inserting the created website into meteor collection
+    const object = Meteor.call('profiles.insert', website, url, function(error) {
+      if (error) {
+        console.log(error.reason);
+      } else {
+        console.log('adding a website...', website, url);
+      }
+    });
+
+    const sites = this.props.profiles;
+    console.log(sites);
+
+    // update store with email and pass, and unique id
+      siteStore.createSite(sites);
   }
 
   handleDelete(event, siteID) {
     event.preventDefault();
     // delete site with meteor method
+  }
+
+  handleTileClick(id) {
+    // emit/create to store
+    siteStore.createCurrentSite(id);
+
+    // launch screen with tile info
+    browserHistory.push('/config');
   }
 
   render() {
@@ -54,7 +72,10 @@ class CoreContainer extends React.Component {
             </div>
 
             <div className="col col-sm-5">
-              <SiteList onDelete={this.handleDelete}/>
+              <SiteList
+                sites={this.state.sites}
+                onDelete={this.handleDelete}
+                onTileClick={this.handleTileClick}/>
               {/* sites={this.state.sites} */}
             </div>
           </div>
@@ -64,4 +85,10 @@ class CoreContainer extends React.Component {
   }
 }
 
-export default CoreContainer;
+export default createContainer(() => {
+
+  Meteor.subscribe('profiles');
+
+  return { profiles: Profiles.find({owner: Meteor.userId()}).fetch() }
+
+}, CoreContainer);

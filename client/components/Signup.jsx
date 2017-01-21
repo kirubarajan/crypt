@@ -11,7 +11,6 @@ class Signup extends React.Component {
     const passwordMatch = this.refs.passwordMatch.value;
 
     if (password === passwordMatch) {
-      console.log('creating account...');
       Accounts.createUser({email: email, password: password}, function(error) {
         if (error) {
           console.log(error.reason);

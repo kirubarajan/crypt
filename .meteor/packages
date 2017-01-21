@@ -25,3 +25,4 @@ accounts-ui-unstyled
 fourseven:scss
 accounts-password
 simple:rest
+react-meteor-data

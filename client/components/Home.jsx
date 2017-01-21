@@ -7,7 +7,6 @@ class Home extends React.Component {
     event.preventDefault();
     const email = this.refs.email.value;
     const password = this.refs.password.value;
-    console.log('logging in...');
     console.log(email, password);
     Meteor.loginWithPassword(email, password);
     browserHistory.push('/core');

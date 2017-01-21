@@ -1,16 +1,21 @@
 $font-stack: 'Roboto', sans-serif;
-$primary-color: #657395;
+$secondary-font-stack: 'Roboto Mono', monospace;
+$background: #27355A;
 $secondary-color: #fff;
 $header: #C18A2E;
 $grey: #D4D5D6;
-$signin: #554F92;
+$blue: #4CA4EC;
+$orange: #F9BB3C;
+$signin: #1DCB8B;
 $dark-grey: #A9A9AB;
 $input: #969696 ;
-$input-focus: #554F92;
+$input-focus: #1DCB8B;
+
+* { text-decoration: none !important}
 
 body {
   font-family: $font-stack !important;
-  background-color: $primary-color !important;
+  background-color: $background !important;
   color: $secondary-color !important;
 }
 
@@ -33,9 +38,9 @@ h1 {
 }
 
 .one-edge-shadow {
-  -webkit-box-shadow: 0 10px 6px -6px #4A4A4A;
-  	-moz-box-shadow: 0 10px 6px -6px #4A4A4A;
-  	box-shadow: 0 10px 6px -6px #4A4A4A;
+  -webkit-box-shadow: 0 10px 6px -6px #000;
+  	-moz-box-shadow: 0 10px 6px -6px #000;
+  	box-shadow: 0 10px 6px -6px #000;
 }
 
 Form {
@@ -43,6 +48,7 @@ Form {
 }
 
 input {
+  font-family: $secondary-font-stack !important;
   margin-left: auto !important;
   margin-right: auto !important;
   border-color: $grey !important;
@@ -61,6 +67,7 @@ input:focus {
 }
 
 Button {
+  font-family: $secondary-font-stack !important;
   font-size: 2.2vh !important;
   font-weight: 400 !important;
   padding: 10px 60px 10px 60px !important;
@@ -118,8 +125,8 @@ Button {
   .site-tile {
     align-items: center;
     background: #FDB943;
-    border-left: 1px solid $primary-color;
-    border-bottom: 1px solid $primary-color;
+    border-left: 1px solid $background;
+    border-bottom: 1px solid $background;
     display: flex;
     justify-content: center;
     height: 33vh;
@@ -131,4 +138,150 @@ Button {
       }
     }
   }
+}
+
+.landing-header {
+  color: #FFF !important;
+  font-weight: 700 !important;
+  font-size: 60px !important;
+  margin-top: 17vh !important;
+  margin-bottom: 15px !important;
+}
+
+.landing-paragraph {
+  font-family: $secondary-font-stack;
+  color: $grey !important;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px !important;
+  text-align: center;
+  width: 300px !important;
+  font-size: 19px !important;
+}
+
+.landing-info-paragraph{
+  color: $dark-grey !important;
+  font-size: 17px !important;
+  font-weight: 300 !important;
+  width: 500px !important;
+}
+
+.landing-footer-paragraph{
+  color: #4A4A4A !important;
+  font-size: 12px !important;
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+}
+
+.create {
+  color: $blue !important;
+}
+
+.manage {
+  color: $orange !important;
+}
+
+.landing {
+  padding-bottom: 100px !important;
+     background: url('http://i.imgur.com/bPMnyvT.png') no-repeat;
+     padding-bottom: 62.5%; // ratio is 16:10
+     background-position: 50% 50%;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+
+.landing-info {
+  background-color: #FFF !important;
+}
+
+.landing-footer  {
+  background-color: $signin !important;
+}
+
+.landing-img {
+  width: 220px !important;
+  display: block!important;
+  margin-left: auto!important;
+  margin-right: auto!important;
+  margin-bottom: 90px !important;
+}
+
+.landing-info-img {
+  width: 225px !important;
+  display: block!important;
+  margin-top: 90px !important;
+  margin-left: auto!important;
+  margin-right: auto!important;
+  margin-bottom: 30px !important;
+}
+
+/* Shutter Out Horizontal */
+.hvr-shutter-out-horizontal {
+  background-color: $signin !important;
+  font-family: $secondary-font-stack !important;
+  padding: 15px 60px 15px 60px !important;
+  display: block!important;
+  color: #FFF !important;
+  text-align: center !important;
+  margin-left: auto!important;
+  margin-right: auto!important;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  background: #e1e1e1;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-shutter-out-horizontal:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #2098D1;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-shutter-out-horizontal:hover, .hvr-shutter-out-horizontal:focus, .hvr-shutter-out-horizontal:active {
+  color: white;
+}
+.hvr-shutter-out-horizontal:hover:before, .hvr-shutter-out-horizontal:focus:before, .hvr-shutter-out-horizontal:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: #FFF;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
 }

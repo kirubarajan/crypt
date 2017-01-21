@@ -5,7 +5,7 @@ import base64url from 'base64url';
 
 Meteor.methods({
 
-  'accounts.insert': function(name, url) {
+  'profiles.insert': function(name, url) {
 
     //TODO: generate proxy email
 
@@ -15,33 +15,34 @@ Meteor.methods({
 
     let generated_password = base64url(crypto.randomBytes(12));
 
+    console.log(this.userId);
+
     // encrypting email and password using AES256
 
-    let cipher = crypto.createCipher('aes-256-ctr', this._id);
+    let cipher = crypto.createCipher('aes-256-ctr', 'ieatass');
 
     let password = cipher.update(generated_password, 'utf8', 'hex');
     password += cipher.final('hex');
 
     // inserting new account into database
 
-    return Accounts.insert({
+    return Profiles.insert({
       name,
       url,
       email,
       password,
-      salt,
-      owner: this._id
+      owner: this.userId
     });
 
   },
 
-  'accounts.remove': function(account) {
+  'profiles.remove': function(account) {
 
-    return Accounts.remove(account);
+    return Profiles.remove(account);
 
   },
 
-  'accounts.update': function(account, name, url, email, password) {
+  'profiles.update': function(account, name, url, email, password) {
 
     // encrypting email and password using AES256
 
@@ -50,7 +51,7 @@ Meteor.methods({
     let encrypted_password = cipher.update(generated_password, 'utf8', 'hex');
     encrypted_password += cipher.final('hex');
 
-    return Accounts.update(account, {$set: {
+    return Profiles.update(account, {$set: {
       password: encrypted_password,
       email,
       name,
@@ -61,4 +62,4 @@ Meteor.methods({
 
 });
 
-export const Accounts = new Mongo.Collection('accounts');
+export const Profiles = new Mongo.Collection('profiles');

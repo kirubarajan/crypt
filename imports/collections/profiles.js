@@ -5,7 +5,7 @@ import base64url from 'base64url';
 
 Meteor.methods({
 
-  'profiles.insert': function(name, url) {
+  'profiles.insert': function(name) {
 
     // generating email
 
@@ -40,7 +40,7 @@ Meteor.methods({
 
   },
 
-  'profiles.update': function(account, name, url, email, password) {
+  'profiles.update': function(account, name, email, password) {
 
     // encrypting email and password using AES256
 

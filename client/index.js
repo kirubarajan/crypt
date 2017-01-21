@@ -7,9 +7,7 @@ import Splash from './components/splash';
 const screen = (
 
   <Router history={browserHistory}>
-
     <Route path='/' component={Splash}/>
-
   </Router>
 
 );

@@ -1,20 +1,13 @@
-import React, { Component } from 'react';
-import { Card, Button, CardTitle, CardText, Row, Col, Container } from 'reactstrap';
+import React from 'react';
 
-import Navigation from './navigation';
-
-class Splash extends Component {
-
+class Splash extends React.Component {
   render() {
-
     return (
-
-      <Navigation />
-
+      <div>
+        <h1>Hello World</h1>
+      </div>
     );
-
   }
-
 }
 
 export default Splash;

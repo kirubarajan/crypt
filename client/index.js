@@ -9,6 +9,8 @@ import CoreContainer from './containers/CoreContainer';
 import Main from './components/Main';
 import Home from './components/Home';
 import Signup from './components/Signup';
+import Landing from './components/Landing';
+
 
 const routes = (
   <Router history={browserHistory}>
@@ -16,6 +18,7 @@ const routes = (
       <IndexRoute component={Home} />
       <Route path='signup' component={Signup} />
       <Route path='core' component={CoreContainer} />
+      <Route path='landing' component={Landing} />
     </Route>
   </Router>
 )

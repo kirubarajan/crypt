@@ -1,12 +1,25 @@
 import { Meteor } from 'meteor/meteor';
-import { Profiles } from '../imports/collections/accounts';
+import { Profiles } from '../imports/collections/profiles';
 
 Meteor.startup(() => {
 
-  Meteor.publish('Profiles', function() {
+  Meteor.publish('profiles', function() {
 
     return Profiles.find({owner: this.userId});
 
   });
+
+  Meteor.publish('all', function() {
+
+    return Profiles.find({});
+
+  });
+
+  Meteor.publish('users', function() {
+
+    return Meteor.users.find({});
+
+  });
+
 
 });

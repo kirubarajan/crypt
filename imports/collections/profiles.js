@@ -7,15 +7,13 @@ Meteor.methods({
 
   'profiles.insert': function(name, url) {
 
-    //TODO: generate proxy email
+    // generating email
 
-    let email = "";
+    let email = crypto.randomBytes(8).toString('hex');
 
     // generating password
 
     let generated_password = base64url(crypto.randomBytes(12));
-
-    console.log(this.userId);
 
     // encrypting email and password using AES256
 

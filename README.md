@@ -1,6 +1,8 @@
-# TBA
+# plsencrypt
 
-LastPass++
+[Website](https://plsencrypt.me)
+
+A password manager that prevents rainbow look up hacking attempts by abstracting away email from account creation.
 
 ## Installation
 

@@ -1,0 +1,98 @@
+$font-stack: 'Roboto', sans-serif;
+$primary-color: #657395;
+$secondary-color: #fff;
+$header: #C18A2E;
+$grey: #D4D5D6;
+$signin: #554F92;
+$dark-grey: #A9A9AB;
+$input: #c9c9c9 ;
+$input-focus: #969696;
+
+body {
+  font-family: $font-stack !important;
+  background-color: $primary-color !important;
+  color: $secondary-color !important;
+}
+
+h1 {
+  font-size: 4vh !important;
+  margin-bottom: 55px !important;
+  color: $header !important;
+  text-align: center !important;
+  font-weight: 300 !important;
+}
+
+.header-signup{
+  margin-top: 50px !important;
+}
+
+.container {
+  background-color: #FDB943 !important;
+  margin-top:50px;
+  margin-bottom: 50px;
+}
+
+.one-edge-shadow {
+  -webkit-box-shadow: 0 10px 6px -6px #4A4A4A;
+  	-moz-box-shadow: 0 10px 6px -6px #4A4A4A;
+  	box-shadow: 0 10px 6px -6px #4A4A4A;
+}
+
+Form {
+  text-align: center !important;
+}
+
+Input {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border-color: $grey !important;
+  margin-bottom: 25px !important;
+  width: 75% !important;
+  padding: 10px !important;
+  border: none !important;
+  border-bottom: solid 2px $input !important;
+  border-radius: 0 !important;
+  transition: border 0.3s !important;
+}
+
+Input:focus {
+  border-bottom: solid 2px $input-focus !important ;
+}
+
+Button {
+  font-size: 2.2vh !important;
+  font-weight: 400 !important;
+  padding: 10px 60px 10px 60px !important;
+  margin-right: 10px !important;
+  margin-top: 25px !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+.signin {
+  background-color: $signin !important;
+  color: #FFF !important;
+}
+
+.register {
+  color: $dark-grey !important;
+  border-color: $grey !important;
+}
+
+.create-account {
+  background-color: $signin !important;
+  color: #FFF !important;
+  margin-bottom: 60px !important;
+}
+
+.col-left {
+  margin-top: 130px !important;
+}
+
+.col-right {
+   background: url('https://d13yacurqjgara.cloudfront.net/users/936407/screenshots/2448430/untitled-3.gif') no-repeat;
+   padding-bottom: 62.5%; // ratio is 16:10
+   background-position: 50% 50%;
+   background-repeat: no-repeat;
+   background-size: cover;
+}

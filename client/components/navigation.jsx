@@ -35,49 +35,13 @@ class Navigation extends Component {
 
       <Navbar color="faded" light>
 
-        <NavbarBrand href="/">elore</NavbarBrand>
+        <NavbarBrand href="/">hashslinginghackers</NavbarBrand>
 
         <Nav className="float-xs-left" navbar>
 
           <NavItem>
 
-            <NavLink href="/browse"> Browse </NavLink>
-
-          </NavItem>
-
-          <NavItem>
-
-            <NavLink href="/portfolio"> Portfolio </NavLink>
-
-          </NavItem>
-
-          <NavItem>
-
-            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-
-              <DropdownToggle caret>
-
-                Arun
-
-              </DropdownToggle>
-
-              <DropdownMenu>
-
-                <DropdownItem header> Account </DropdownItem>
-
-                <DropdownItem> Messages </DropdownItem>
-
-                <DropdownItem> Profile </DropdownItem>
-
-                <DropdownItem> Settings </DropdownItem>
-
-                <DropdownItem divider />
-
-                <DropdownItem> <AccountsUIWrapper /> </DropdownItem>
-
-              </DropdownMenu>
-
-            </Dropdown>
+            <NavLink href="/login"> Log In </NavLink>
 
           </NavItem>
 

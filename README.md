@@ -1,4 +1,4 @@
-# plsencrypt
+# Crypt
 
 [Website](https://plsencrypt.me)
 

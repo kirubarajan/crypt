@@ -1,35 +1,45 @@
 import React from 'react';
 
+import SitesStore from '../stores/SitesStore';
 import SiteTile from '../components/SiteTile';
 
 class SiteList extends React.Component {
   constructor() {
     super();
-    // get data from meteor call
     this.state = {
-      sites: [
-        {name: 'google', url: 'google.com'},
-        {name: 'facebook', url: 'facebook.com'},
-        {name: 'twitter', url: 'twitter.com'},
-        {name: 'instagram', url: 'instagram.com'},
-        {name: 'linkedin', url: 'linkedin.com'},
-        {name: 'youtube', url: 'youtube.com'},
-        {name: 'github', url: 'github.com'},
-      ],
-      test: 'test'
+      sites: SitesStore.getAll()
     };
   }
 
+  componentWillMount() {
+    SitesStore.on('change', () => {
+      this.setState({
+        sites: SitesStore.getAll()
+      })
+    });
+  }
+
   render() {
-    const sites = this.state.sites.map((website) => (
+
+    //works
+    // this.state.sites.map((website) => {
+    //   console.log(website._id);
+    // });
+
+    const sites = this.state.sites.map((website, i) => (
       <SiteTile
+        // doesn't assign key
+        _id={website._id}
+        key={i}
         name={website.name}
         url={website.url}
-        onDelete={this.props.onDelete}/>
+        onDelete={this.props.onDelete}
+        onTileClick={this.props.onTileClick}/>
     ));
     return (
     <div className="row site-list">
       {sites}
+      {this.props.sites}
     </div>
     );
   }

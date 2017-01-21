@@ -26,7 +26,7 @@ class CoreContainer extends React.Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <div className="col col-sm-6">
+          <div className="col col-sm-6 site-creator-wrapper">
             <SiteCreator
               onCreate={this.handleCreate.bind(this)}/>
           </div>

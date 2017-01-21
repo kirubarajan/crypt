@@ -11,20 +11,19 @@ class SiteCreator extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="site-creator">
+        <h1>Add Website</h1>
         <Form onSubmit={this.onCreate.bind(this)}>
           <FormGroup>
-            <Label>Website Name</Label>
             <input
               type="text"
-              placeholder="What's the name of the website?"
+              placeholder="Website Name"
               ref="website" />
           </FormGroup>
           <FormGroup>
-            <Label>URL</Label>
             <input
               type="text"
-              placeholder="What is the URL of the website?"
+              placeholder="URL"
               ref="url" />
           </FormGroup>
           <Button>Create</Button>

@@ -26,7 +26,7 @@ class Signup extends React.Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="container one-edge-shadow">
         <div className="row align-items-sm-center justify-content-sm-center">
           <div className="col col-sm-6 offset-sm-3">
             <h1 className="header-signup">SIGN UP</h1>

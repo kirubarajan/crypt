@@ -19,13 +19,13 @@ class CoreContainer extends React.Component {
     };
   }
 
-  handleCreate(website, url) {
+  handleCreate(website) {
     // inserting the created website into meteor collection
-    const object = Meteor.call('profiles.insert', website, url, function(error) {
+    const object = Meteor.call('profiles.insert', website, 'url', function(error) {
       if (error) {
         console.log(error.reason);
       } else {
-        console.log('adding a website...', website, url);
+        console.log('adding the website...', website);
       }
     });
 

@@ -19,6 +19,7 @@ class SiteConfig extends React.Component {
   render() {
     return (
       <div>
+        <h1>Edit Website Information</h1>
         <Form>
           <FormGroup>
             <Input

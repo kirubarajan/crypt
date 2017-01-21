@@ -17,13 +17,13 @@ class SiteCreator extends React.Component {
           <FormGroup>
             <input
               type="text"
-              placeholder="What's the name of the website?"
+              placeholder="Website Name"
               ref="website" />
           </FormGroup>
           <FormGroup>
             <input
               type="text"
-              placeholder="What is the URL of the website?"
+              placeholder="URL"
               ref="url" />
           </FormGroup>
           <Button>Create</Button>

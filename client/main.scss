@@ -10,6 +10,7 @@ $signin: #1DCB8B;
 $dark-grey: #A9A9AB;
 $input: #969696 ;
 $input-focus: #1DCB8B;
+$red: #fb4f4f;
 
 * { text-decoration: none !important}
 
@@ -284,4 +285,19 @@ Button {
 .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
   left: 0;
   right: 0;
+}
+
+.site-config {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  input {
+    width: 40vw;
+  }
+  .delete-button {
+    background: $red;
+    color: $secondary-color;
+  }
 }

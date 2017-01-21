@@ -1,5 +1,4 @@
 import React from 'react';
-import CopyToClipboard from 'react-copy-to-clipboard';
 import { browserHistory } from 'react-router';
 
 import { createContainer } from 'meteor/react-meteor-data';
@@ -21,7 +20,7 @@ class CoreContainer extends React.Component {
 
   handleCreate(website) {
     // inserting the created website into meteor collection
-    const object = Meteor.call('profiles.insert', website, 'url', function(error) {
+    const object = Meteor.call('profiles.insert', website, function(error) {
       if (error) {
         console.log(error.reason);
       } else {
@@ -30,7 +29,6 @@ class CoreContainer extends React.Component {
     });
 
     const sites = this.props.profiles;
-    console.log(sites);
 
     // update store with email and pass, and unique id
     siteStore.createSite(sites);

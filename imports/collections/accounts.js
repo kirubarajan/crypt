@@ -1,21 +1,35 @@
 import { Mongo } from 'meteor/mongo';
 import secureRandom from 'secure-random';
+import crypto from 'crypto';
+import base64url from 'base64url';
 
 Meteor.methods({
 
-  'accounts.insert': function() {
+  'accounts.insert': function(name, url) {
 
     //TODO: generate proxy email
-    //TODO: generate secure password
-    //TODO: generate and append salt to proxy email
-    //TODO: encrypt salted email and password using AES256
 
-    let email = null;
-    let password = null;
+    let email = "";
+
+    // generating password
+
+    let generated_password = base64url(crypto.randomBytes(12));
+
+    // encrypting email and password using AES256
+
+    let cipher = crypto.createCipher('aes-256-ctr', this._id);
+
+    let password = cipher.update(generated_password, 'utf8', 'hex');
+    password += cipher.final('hex');
+
+    // inserting new account into database
 
     return Accounts.insert({
+      name,
+      url,
       email,
       password,
+      salt,
       owner: this._id
     });
 
@@ -27,12 +41,21 @@ Meteor.methods({
 
   },
 
-  'accounts.update': function(account, email, password) {
+  'accounts.update': function(account, name, url, email, password) {
 
-    let email = null;
-    let password = null;
+    // encrypting email and password using AES256
 
-    return Accounts.update(account, {$set: { email, password }});
+    let cipher = crypto.createCipher('aes-256-ctr', this._id);
+
+    let encrypted_password = cipher.update(generated_password, 'utf8', 'hex');
+    encrypted_password += cipher.final('hex');
+
+    return Accounts.update(account, {$set: {
+      password: encrypted_password,
+      email,
+      name,
+      url
+    }});
 
   }
 

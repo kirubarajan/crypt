@@ -1,5 +1,12 @@
 import { Meteor } from 'meteor/meteor';
+import { Accounts } from '../imports/collections/accounts';
 
 Meteor.startup(() => {
-  // code to run on server at startup
+
+  Meteor.publish('accounts', function() {
+
+    return Accounts.find({owner: this.userId});
+
+  });
+
 });

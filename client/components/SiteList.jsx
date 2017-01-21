@@ -28,7 +28,7 @@ class SiteList extends React.Component {
 
     const sites = this.state.sites.map((website, i) => (
       <SiteTile
-        // doesn't assign key
+        // doesnt assign key
         _id={website._id}
         key={i}
         name={website.name}

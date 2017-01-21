@@ -18,7 +18,7 @@ const routes = (
       <IndexRoute component={Landing} />
       <Route path='home' component={Home} />
       <Route path='signup' component={Signup} />
-      <Route path='core' component={CoreContainer} />
+      <Route path='accounts' component={CoreContainer} />
       <Route path='config' component={SiteConfig} />
     </Route>
   </Router>

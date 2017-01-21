@@ -26,12 +26,12 @@ class CoreContainer extends React.Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <div className="col col-sm-6">
+          <div className="col col-sm-7 site-creator-container">
             <SiteCreator
               onCreate={this.handleCreate.bind(this)}/>
           </div>
 
-          <div className="col col-sm-6">
+          <div className="col col-sm-5">
             <SiteList onDelete={this.handleDelete}/>
             {/* sites={this.state.sites} */}
           </div>

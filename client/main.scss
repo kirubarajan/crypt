@@ -22,7 +22,7 @@ h1 {
   font-weight: 300 !important;
 }
 
-.header-signup{
+.header-signup {
   margin-top: 50px !important;
 }
 
@@ -96,4 +96,39 @@ Button {
    background-position: 50% 50%;
    background-repeat: no-repeat;
    background-size: cover;
+}
+
+.site-creator-container {
+  padding: 0 !important;
+  .site-creator {
+    background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ),url('https://d13yacurqjgara.cloudfront.net/users/936407/screenshots/2449702/sad_dino_1nstudio.gif');
+    background-size: cover;
+    height: 100vh;
+    h1 {
+      padding-top: 20vh;
+    }
+  }
+}
+
+.site-list {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  overflow: scroll;
+  .site-tile {
+    align-items: center;
+    background: #FDB943;
+    border-left: 1px solid $primary-color;
+    border-bottom: 1px solid $primary-color;
+    display: flex;
+    justify-content: center;
+    height: 33vh;
+    &:hover {
+      background: $header;
+      cursor: pointer;
+      h1 {
+        color: #FDB943 !important;
+      }
+    }
+  }
 }

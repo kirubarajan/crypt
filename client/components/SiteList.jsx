@@ -12,7 +12,9 @@ class SiteList extends React.Component {
         {name: 'facebook', url: 'facebook.com'},
         {name: 'twitter', url: 'twitter.com'},
         {name: 'instagram', url: 'instagram.com'},
-        {name: 'linkedin', url: 'linkedin.com'}
+        {name: 'linkedin', url: 'linkedin.com'},
+        {name: 'youtube', url: 'youtube.com'},
+        {name: 'github', url: 'github.com'},
       ],
       test: 'test'
     };
@@ -26,7 +28,7 @@ class SiteList extends React.Component {
         onDelete={this.props.onDelete}/>
     ));
     return (
-    <div className="row">
+    <div className="row site-list">
       {sites}
     </div>
     );

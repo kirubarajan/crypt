@@ -1,24 +1,34 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 
 class Home extends React.Component {
+  login(event) {
+    event.preventDefault();
+    const email = this.refs.emailLogin.value;
+    const password = this.refs.passwordLogin.value;
+    console.log('logging in...');
+    console.log(email, password);
+    Meteor.loginWithPassword(email, password);
+    // browserHistory.push('/core');
+  }
+
   render() {
     return (
       <div className="container one-edge-shadow">
         <div className="row align-items-sm-center justify-content-sm-center">
           <div className="col-left col col-sm-6">
             <h1>SIGN IN</h1>
-            <Form>
+            <Form onSubmit={this.login.bind(this)}>
              <FormGroup>
-               <Input type="email" name="email" id="exampleEmail" placeholder="Email" />
+               <Input type="email" name="email" id="exampleEmail" placeholder="Email" ref="emailLogin"/>
              </FormGroup>
              <FormGroup>
-               <Input type="password" name="password" id="examplePassword" placeholder="Password" />
+               <Input type="password" name="password" id="examplePassword" placeholder="Password" ref="passwordLogin"/>
              </FormGroup>
              <Link to='/signup'>
-             <Button className="register">REGISTER</Button>
-           </Link>
+              <Button className="register">REGISTER</Button>
+              </Link>
                <Button className="signin">SIGN IN</Button>
            </Form>
           </div>

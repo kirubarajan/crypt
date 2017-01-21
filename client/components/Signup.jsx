@@ -6,22 +6,19 @@ class Signup extends React.Component {
     return (
       <div className="container">
         <div className="row align-items-sm-center justify-content-sm-center">
-          <div className="col col-sm-12">
-            <h1>Signup</h1>
+          <div className="col col-sm-6 offset-sm-3">
+            <h1 className="header-signup">SIGN UP</h1>
             <Form>
               <FormGroup>
-                <Label for="exampleEmail">Email</Label>
-                <Input type="email" name="email" id="exampleEmail" placeholder="email" />
+                <Input type="email" name="email" id="exampleEmail" placeholder="Email" />
               </FormGroup>
               <FormGroup>
-                <Label for="examplePassword">Password</Label>
-                <Input type="password" name="password" id="examplePassword" placeholder="password" />
+                <Input type="password" name="password" id="examplePassword" placeholder="Password" />
               </FormGroup>
               <FormGroup>
-                <Label for="examplePassword">Repeat Password</Label>
-                <Input type="password" name="password" id="examplePassword" placeholder="repeat password" />
+                <Input type="password" name="password" id="examplePassword" placeholder="Repeat Password" />
               </FormGroup>
-              <Button>Enter</Button>
+              <Button className="create-account">CREATE ACCOUNT</Button>
             </Form>
           </div>
         </div>

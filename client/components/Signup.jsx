@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Link, browserHistory } from 'react-router';
+
 
 class Signup extends React.Component {
   createAccount(event) {
@@ -16,6 +18,7 @@ class Signup extends React.Component {
         }
         else {
           console.log(Meteor.userId());
+          browserHistory.push('/core');
         }
       });
       console.log(Meteor.users.findOne({username: email}));

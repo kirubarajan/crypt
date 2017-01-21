@@ -33,7 +33,8 @@ class CoreContainer extends React.Component {
     console.log(sites);
 
     // update store with email and pass, and unique id
-      siteStore.createSite(sites);
+    siteStore.createSite(sites);
+
   }
 
   handleDelete(event, siteID) {
@@ -52,25 +53,12 @@ class CoreContainer extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <input className="copy-input" value={this.state.value}
-            onChange={({target: {value}}) => this.setState({value, copied: false})} />&nbsp;
-
-          <CopyToClipboard text={this.state.value}
-            onCopy={() => this.setState({copied: true})}>
-            <button className="copy-button">Copy to clipboard</button>
-          </CopyToClipboard>&nbsp;
-
-          {this.state.copied ? <span>Copied</span> : null}
-        </div>
-
         <div className="container-fluid">
           <div className="row">
             <div className="col col-sm-7 site-creator-container">
               <SiteCreator
                 onCreate={this.handleCreate.bind(this)}/>
             </div>
-
             <div className="col col-sm-5">
               <SiteList
                 sites={this.state.sites}

@@ -2,16 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-import Splash from './components/splash';
+// Components we're loading
+import Main from './components/Main';
+import Home from './components/Home';
 
-const screen = (
-
+const routes = (
   <Router history={browserHistory}>
-    <Route path='/' component={Splash}/>
+    <Route path='/' component={Main}>
+      <IndexRoute component={Home} />
+    </Route>
   </Router>
-
-);
+)
 
 Meteor.startup(() => {
-  ReactDOM.render(screen, document.querySelector('.render-target'));
+  ReactDOM.render(routes, document.querySelector('.render-target'));
 });

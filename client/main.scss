@@ -135,24 +135,29 @@ Button {
 
 .site-list {
   align-content: flex-start;
+  background: $signin !important;
   display: flex;
   flex-wrap: wrap;
   height: 100vh;
   overflow: scroll;
   .site-tile {
     align-items: center;
-    background: #FDB943;
+    background: #169c6b;
     border-left: 1px solid $background;
     border-bottom: 1px solid $background;
     display: flex;
     justify-content: center;
     height: 33vh;
+    h1 {
+      color: $secondary-color !important;
+      margin-bottom: 0 !important;
+    }
+    &:last-child, &:nth-last-child(2) {
+      border-bottom: 0;
+    }
     &:hover {
-      background: $header;
+      background: #13865c;
       cursor: pointer;
-      h1 {
-        color: #FDB943 !important;
-      }
     }
   }
 }

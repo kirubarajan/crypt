@@ -463,3 +463,10 @@ Button {
     width: 300px !important;
   }
 }
+
+@media (max-width: 500px) {
+  .hide {
+    visibility: hidden;
+  }
+
+}

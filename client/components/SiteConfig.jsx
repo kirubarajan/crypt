@@ -111,7 +111,7 @@ class SiteConfig extends React.Component {
                   placeholder="Enter a new email"
                   value={this.state.site.email}
                   ref="email"/>
-                  <Button className="button-right" onClick={this.handleCopyEmailClick.bind(this)}><p>Copy</p></Button>
+                  <Button className="button-right hide" onClick={this.handleCopyEmailClick.bind(this)}><p>Copy</p></Button>
               </div>
               <br />
               <p>Password</p>
@@ -121,7 +121,7 @@ class SiteConfig extends React.Component {
                   placeholder="Enter a new password"
                   value={this.state.site.password}
                   ref="password"/>
-                  <Button className="button-right" onClick={this.handleCopyPasswordClick.bind(this)}><p>Copy</p></Button> <br />
+                  <Button className="button-right hide" onClick={this.handleCopyPasswordClick.bind(this)}><p>Copy</p></Button> <br />
               </div>
             </FormGroup>
             <Notification
@@ -130,8 +130,8 @@ class SiteConfig extends React.Component {
                activeClassName={".notification"}
                onDismiss={this.hideNotification.bind(this)}
              />
-            <Button className="delete-button button-right" onClick={this.handleDeleteClick.bind(this)}>Delete</Button>
-            <Button className="update-button button-left" onClick={this.handleUpdateClick.bind(this)}>Update</Button>
+            <Button className="delete-button button-right hide" onClick={this.handleDeleteClick.bind(this)}>Delete</Button>
+            <Button className="update-button button-left hide-center" onClick={this.handleUpdateClick.bind(this)}>Update</Button>
             <Link to='/accounts'><Button className="back-button">Back</Button></Link>
           </Form>
 

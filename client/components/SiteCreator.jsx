@@ -2,9 +2,11 @@ import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class SiteCreator extends React.Component {
+
   onCreate(event) {
     event.preventDefault();
     const website = this.refs.website.value;
+    this.refs.website.value = "";
     this.props.onCreate(website);
   }
 

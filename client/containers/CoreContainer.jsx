@@ -19,19 +19,15 @@ class CoreContainer extends React.Component {
   }
 
   handleCreate(website) {
-    // inserting the created website into meteor collection
-    var context = this;
-    const object = Meteor.call('profiles.insert', website, function(error) {
+
+    object = Meteor.call('profiles.insert', website, function(error, profile) {
+
       if (error) {
         console.log(error.reason);
       } else {
-        console.log('adding a website...', website);
-        const sites = context.props.profiles;
-        console.log(sites);
-
-        // update store with email and pass, and unique id
-          siteStore.createSite(sites);
+        
       }
+
     });
   }
 
@@ -44,7 +40,7 @@ class CoreContainer extends React.Component {
     // launch screen with tile info
     console.log(id);
     browserHistory.push('/config/' + id);
-    
+
   }
 
   render() {

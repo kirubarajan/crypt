@@ -3,6 +3,17 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Link, browserHistory } from 'react-router';
 
 class Home extends React.Component {
+
+  componentWillMount() {
+
+    if (Meteor.userId()) {
+
+      browserHistory.push('/accounts');
+
+    }
+
+  }
+
   onLogin(event) {
     event.preventDefault();
     const email = this.refs.email.value;

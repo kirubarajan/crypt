@@ -11,24 +11,20 @@ class SiteList extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    console.log('component will mount');
     SitesStore.on('change', () => {
+      console.log('store changed');
       this.setState({
         sites: SitesStore.getAll()
       })
+      console.log(this.state.sites);
     });
   }
 
   render() {
-
-    //works
-    // this.state.sites.map((website) => {
-    //   console.log(website._id);
-    // });
-
     const sites = this.state.sites.map((website, i) => (
       <SiteTile
-        // doesnt assign key
         _id={website._id}
         key={i}
         name={website.name}

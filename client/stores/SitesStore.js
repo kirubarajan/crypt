@@ -7,6 +7,7 @@ class SiteStore extends EventEmitter {
   }
 
   createSite(sites) {
+    console.log('creating site');
     this.sites = sites;
     this.emit('change');
   }

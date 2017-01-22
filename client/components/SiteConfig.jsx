@@ -22,6 +22,7 @@ class SiteConfig extends React.Component {
 
   handleDeleteClick(event) {
     event.preventDefault();
+    var context = this;
     console.log(this.props.profiles);
     const id = this.state.site._id;
     Meteor.call('profiles.remove', id, function(error) {
@@ -29,13 +30,13 @@ class SiteConfig extends React.Component {
         console.log(error.reason);
       } else {
         console.log('deleting', id);
+        const sites = context.props.profiles;
+        console.log(sites);
+        SitesStore.createSite(sites);
       }
     });
 
-    const sites = this.props.profiles;
-    console.log(sites);
     // update store with new sites collection that has deleted site
-    // SitesStore.createSite(sites);
     // browserHistory.push('/accounts');
   }
 

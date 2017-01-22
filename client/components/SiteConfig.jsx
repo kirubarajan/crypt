@@ -106,22 +106,22 @@ class SiteConfig extends React.Component {
                 ref="name"/>
               <p>Email</p>
               <div className="input--copy-functionality">
-                <input
+                <input className="no-focus"
                   type="text"
                   placeholder="Enter a new email"
-                  defaultValue={this.state.site.email}
+                  value={this.state.site.email}
                   ref="email"/>
-                  <Button className="button-right" onClick={this.handleCopyEmailClick.bind(this)}>Copy Email</Button>
+                  <Button className="button-right" onClick={this.handleCopyEmailClick.bind(this)}>Copy</Button>
               </div>
               <br />
               <p>Password</p>
               <div className="input--copy-functionality">
-                <input
+                <input className="no-focus"
                   type="text"
                   placeholder="Enter a new password"
-                  defaultValue={this.state.site.password}
+                  value={this.state.site.password}
                   ref="password"/>
-                  <Button className="button-right" onClick={this.handleCopyPasswordClick.bind(this)}>Copy Password</Button> <br />
+                  <Button className="button-right" onClick={this.handleCopyPasswordClick.bind(this)}>Copy</Button> <br />
               </div>
             </FormGroup>
             <Notification

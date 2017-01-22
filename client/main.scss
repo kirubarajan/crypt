@@ -73,6 +73,10 @@ input:focus {
   outline: none;
 }
 
+.no-focus:focus {
+  border-bottom: solid 2px $input !important;
+}
+
 Button {
   font-family: $secondary-font-stack !important;
   font-size: 2.2vh !important;
@@ -153,7 +157,9 @@ Button {
   flex-wrap: wrap;
   height: 100vh;
   overflow: scroll;
+
   .site-tile {
+    text-transform: lowercase !important;
     align-items: center;
     background: #169c6b;
     border-left: 1px solid $background;
@@ -161,17 +167,21 @@ Button {
     display: flex;
     justify-content: center;
     height: 33vh;
+
     h1 {
       color: $secondary-color !important;
       margin-bottom: 0 !important;
     }
+
     &:last-child, &:nth-last-child(2) {
       border-bottom: 0;
     }
+
     &:hover {
       background: #13865c;
       cursor: pointer;
     }
+
   }
 }
 
@@ -307,6 +317,7 @@ Button {
   justify-content: center;
 
   h1 {
+    text-transform: uppercase !important;
     margin-bottom: 2em !important;
     margin-bottom: 1em !important;
   }

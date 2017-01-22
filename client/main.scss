@@ -410,7 +410,7 @@ Button {
     justify-content: center;
     width: 46%;
     &.button-left {
-      float: left;
+      float: left !important;
     }
     &.button-right {
       float: right;
@@ -442,7 +442,7 @@ Button {
   .back-button {
     box-shadow: 0px 3px 0px 0px #a6a6a6;
     float: left;
-    width: 100% !important;
+    width: 100%;
   }
 }
 
@@ -468,5 +468,7 @@ Button {
   .hide {
     visibility: hidden;
   }
-
+  .back-button {
+    width: 46% !important;
+  }
 }

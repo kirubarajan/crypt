@@ -19,8 +19,8 @@ const routes = (
       <Route path='home' component={Home} />
       <Route path='signup' component={Signup} />
       <Route path='accounts' component={CoreContainer} />
-      <Route path='config' component={SiteConfig} />
     </Route>
+    <Route path='config/:profile' component={SiteConfig} />
   </Router>
 )
 

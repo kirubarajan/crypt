@@ -13,7 +13,7 @@ Meteor.methods({
 
     // generating password
 
-    let generated_password = base64url(crypto.randomBytes(12));
+    let generated_password = base64url(crypto.randomBytes(12)) + "@4@!!0016";
 
     // encrypting email and password using AES256
 

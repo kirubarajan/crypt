@@ -1,72 +1,104 @@
 import React from 'react';
 import { Link, browserHistory } from 'react-router';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+
 import { createContainer } from 'meteor/react-meteor-data';
 import { Profiles } from '../../imports/collections/profiles';
 
-import SitesStore from '../stores/SitesStore';
+import copy from 'copy-to-clipboard';
+import { Notification } from 'react-notification';
 
 class SiteConfig extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      site: ''
+
+    constructor(props) {
+
+      super(props);
+
+      this.state = {
+        site: '',
+        notification: false
+      };
+
+    }
+
+    componentWillMount() {
+
+      console.log(this.props.profiles.find(x => x._id === this.props.params.profile));
+
+      this.setState({
+        site: this.props.profiles.find(x => x._id === this.props.params.profile)
+      });
+    }
+
+    hideNotification() {
+
+      this.setState({ notification: false });
+
+    }
+
+    handleDeleteClick(event) {
+      event.preventDefault();
+      const id = this.state.site._id;
+      Meteor.call('profiles.remove', id, function(error) {
+        if (error) {
+          console.log(error.reason);
+        } else {
+          console.log('deleting', id);
+          browserHistory.push('/accounts');
+        }
+      });
+    }
+
+    handleCopyEmailClick(event) {
+      event.preventDefault();
+      copy(this.state.site.email);
+      this.setState({ notification: true });
     };
-  }
 
-  componentWillMount() {
-    this.setState({
-      site: SitesStore.findCurrent()
-    });
-  }
+    handleCopyPasswordClick(event) {
+      event.preventDefault();
+      copy(this.state.site.password);
+      this.setState({ notification: true });
+    };
 
-  handleDeleteClick(event) {
-    event.preventDefault();
-    var context = this;
-    console.log(this.props.profiles);
-    const id = this.state.site._id;
-    Meteor.call('profiles.remove', id, function(error) {
-      if (error) {
-        console.log(error.reason);
-      } else {
-        console.log('deleting', id);
-        const sites = context.props.profiles;
-        console.log(sites);
-        SitesStore.createSite(sites);
-      }
-    });
+    render() {
+      return (
+        <div className="site-config">
+          <h1> {this.state.site.name} Account </h1>
+          <Form>
+            <FormGroup>
+              <input
+                autoFocus
+                type="text"
+                placeholder="Enter a new website name"
+                defaultValue={this.state.site.name}/>
+              <input
+                type="text"
+                placeholder="Enter a new email"
+                defaultValue={this.state.site.email}/>
+              <input
+                type="text"
+                placeholder="Enter a new password"
+                defaultValue={this.state.site.password}/>
+            </FormGroup>
+            <Button className="delete-button copy" onClick={this.handleCopyEmailClick.bind(this)}>Copy Email</Button>
+            <Button className="delete-button copy" onClick={this.handleCopyPasswordClick.bind(this)}>Copy Password</Button> <br />
+            <Notification
+               isActive={this.state.notification}
+               message={"Copied to clipboard!"}
+               activeClassName={".notification"}
+               onDismiss={this.hideNotification.bind(this)}
+             />
+            <Link to='/accounts'><Button>Back</Button></Link>
+            <Button className="delete-button" onClick={this.handleDeleteClick.bind(this)}>Delete</Button>
+          </Form>
 
-    // update store with new sites collection that has deleted site
-    // browserHistory.push('/accounts');
-  }
+          <div data-bttnio-id="btn-4307f29c2502fce0" data-bttnio-context='{ "user_location": { "latitude": 40.6827, "longitude": -73.9754 }, "subject_location": { "latitude": 40.7382869, "longitude": -73.9823721 } }'></div>
 
-  render() {
-    return (
-      <div className="site-config">
-        <h1>Edit Website Information</h1>
-        <Form>
-          <FormGroup>
-            <input
-              autoFocus
-              type="text"
-              placeholder="Enter a new website name"
-              defaultValue={this.state.site.name}/>
-            <input
-              type="text"
-              placeholder="Enter a new email"
-              defaultValue={this.state.site.email}/>
-            <input
-              type="text"
-              placeholder="Enter a new password"
-              defaultValue={this.state.site.password}/>
-          </FormGroup>
-          <Link to='/accounts'><Button>Back</Button></Link>
-          <Button className="delete-button" onClick={this.handleDeleteClick.bind(this)}>Delete</Button>
-        </Form>
-      </div>
-    );
+        </div>
+      );
+    }
   }
-}
 
 export default createContainer(() => {
 

@@ -41,11 +41,10 @@ class CoreContainer extends React.Component {
   }
 
   handleTileClick(id) {
-    // emit/create to store
-    siteStore.createCurrentSite(id);
-
     // launch screen with tile info
-    browserHistory.push('/config');
+    console.log(id);
+    browserHistory.push('/config/' + id);
+    
   }
 
   render() {

@@ -8,6 +8,8 @@ import { Profiles } from '../../imports/collections/profiles';
 import copy from 'copy-to-clipboard';
 import { Notification } from 'react-notification';
 
+import UseButton from './UseButton';
+
 class SiteConfig extends React.Component {
 
     constructor(props) {
@@ -96,7 +98,7 @@ class SiteConfig extends React.Component {
             <Button className="delete-button button-right" onClick={this.handleDeleteClick.bind(this)}>Delete</Button>
           </Form>
 
-          <div data-bttnio-id="btn-4307f29c2502fce0" data-bttnio-context='{ "user_location": { "latitude": 40.6827, "longitude": -73.9754 }, "subject_location": { "latitude": 40.7382869, "longitude": -73.9823721 } }'></div>
+          <UseButton profile={this.state.site.name} />
 
         </div>
       );

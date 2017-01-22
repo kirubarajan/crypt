@@ -124,11 +124,24 @@ Button {
 .site-creator-container {
   padding: 0 !important;
   .site-creator {
-    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ),url('https://d13yacurqjgara.cloudfront.net/users/936407/screenshots/2449702/sad_dino_1nstudio.gif');
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url('https://d13yacurqjgara.cloudfront.net/users/936407/screenshots/2449702/sad_dino_1nstudio.gif');
     background-size: cover;
     height: 100vh;
     h1 {
+      font-weight: 700 !important;
+      margin-bottom: 1em !important;
       padding-top: 30vh;
+    }
+    input, button {
+      border-radius: 5px !important;
+    }
+    button {
+      box-shadow: 0px 3px 0px 0px #a6a6a6;
+      margin-top: 0 !important;
+      &:active {
+        transform: translate(0px, 3px);
+        box-shadow: 0px 1px 0px 0px;
+      }
     }
   }
 }

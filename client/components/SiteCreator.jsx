@@ -13,7 +13,7 @@ class SiteCreator extends React.Component {
   render() {
     return (
       <div className="site-creator">
-        <h1>Add Account</h1>
+        <h1>ADD ACCOUNT</h1>
         <Form onSubmit={this.onCreate.bind(this)}>
           <FormGroup>
             <input

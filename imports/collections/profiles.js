@@ -13,7 +13,7 @@ Meteor.methods({
 
     // generating password
 
-    let generated_password = base64url(crypto.randomBytes(12)) + "@4@!!0016";
+    let generated_password = base64url(crypto.randomBytes(12));
 
     // encrypting email and password using AES256
 
@@ -21,6 +21,7 @@ Meteor.methods({
 
     let password = cipher.update(generated_password, 'utf8', 'hex');
     password += cipher.final('hex');
+    password += "@4@!!0016";
 
     // inserting new account into database
 

@@ -40,20 +40,16 @@ Meteor.methods({
 
   },
 
-  'profiles.update': function(account, name, email, password) {
+  'edit': function(site) {
 
     // encrypting email and password using AES256
 
-    let cipher = crypto.createCipher('aes-256-ctr', this._id);
+    console.log(site);
 
-    let encrypted_password = cipher.update(generated_password, 'utf8', 'hex');
-    encrypted_password += cipher.final('hex');
-
-    return Profiles.update(account, {$set: {
-      password: encrypted_password,
-      email,
-      name,
-      url
+    return Profiles.update(site.id, {$set: {
+      password: site.password,
+      email: site.email,
+      name: site.name
     }});
 
   }

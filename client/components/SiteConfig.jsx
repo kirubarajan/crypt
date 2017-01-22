@@ -8,8 +8,6 @@ import { Profiles } from '../../imports/collections/profiles';
 import copy from 'copy-to-clipboard';
 import { Notification } from 'react-notification';
 
-import UseButton from './UseButton';
-
 class SiteConfig extends React.Component {
 
     constructor(props) {
@@ -55,13 +53,40 @@ class SiteConfig extends React.Component {
       event.preventDefault();
       copy(this.state.site.email);
       this.setState({ notification: true });
-    };
+    }
 
     handleCopyPasswordClick(event) {
       event.preventDefault();
       copy(this.state.site.password);
       this.setState({ notification: true });
-    };
+    }
+
+    handleUpdateClick(event) {
+      event.preventDefault();
+      console.log(this.state.site._id);
+      const id = this.state.site._id;
+      const name = this.refs.name.value;
+      const email = this.refs.email.value;
+      const password = this.refs.password.value;
+
+      const newSite = {
+        name,
+        email,
+        password,
+        id
+      }
+
+      Meteor.call("edit", newSite, function(error) {
+        if (error) {
+          console.log(error.reason);
+        } else {
+          console.log('updating', this.state.site._id);
+        }
+      });
+
+      browserHistory.push('/accounts');
+
+    }
 
     render() {
       return (
@@ -71,20 +96,24 @@ class SiteConfig extends React.Component {
             <FormGroup className="site-config-form">
               <p>Website Name</p>
               <input
+                className="hvr-underline-from-left"
                 autoFocus
                 type="text"
                 placeholder="Enter a new website name"
-                defaultValue={this.state.site.name}/>
+                defaultValue={this.state.site.name}
+                ref="name"/>
               <p>Email</p>
               <input
                 type="text"
                 placeholder="Enter a new email"
-                defaultValue={this.state.site.email}/>
+                defaultValue={this.state.site.email}
+                ref="email"/>
               <p>Password</p>
               <input
                 type="text"
                 placeholder="Enter a new password"
-                defaultValue={this.state.site.password}/>
+                defaultValue={this.state.site.password}
+                ref="password"/>
             </FormGroup>
             <Notification
                isActive={this.state.notification}
@@ -94,11 +123,12 @@ class SiteConfig extends React.Component {
              />
             <Button className="copy button-left" onClick={this.handleCopyEmailClick.bind(this)}>Copy Email</Button>
             <Button className="copy button-right" onClick={this.handleCopyPasswordClick.bind(this)}>Copy Password</Button> <br />
-            <Link to='/accounts'><Button className=" button-left">Back</Button></Link>
             <Button className="delete-button button-right" onClick={this.handleDeleteClick.bind(this)}>Delete</Button>
+            <Button className="update-button button-left" onClick={this.handleUpdateClick.bind(this)}>Update</Button>
+            <Link to='/accounts'><Button className="back-button">Back</Button></Link>
           </Form>
 
-          <UseButton profile={this.state.site.name} />
+          <div data-bttnio-id="btn-4307f29c2502fce0" data-bttnio-context='{ "user_location": { "latitude": 40.6827, "longitude": -73.9754 }, "subject_location": { "latitude": 40.7382869, "longitude": -73.9823721 } }'></div>
 
         </div>
       );

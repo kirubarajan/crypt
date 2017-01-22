@@ -299,6 +299,7 @@ Button {
   input {
     width: 100% !important;
   }
+
   button {
     display: flex;
     justify-content: center;
@@ -312,12 +313,25 @@ Button {
       margin-right: 0 !important;
     }
   }
+
+  .update-button {
+    background: $orange;
+    &:hover {
+      background: #f7a708;
+    }
+  }
+
   .delete-button {
     background: $red;
     color: $secondary-color;
     &:hover {
       background: #fb3737
     }
+  }
+
+  .back-button {
+    float: left;
+    width: 100% !important;
   }
 }
 

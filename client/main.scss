@@ -12,6 +12,12 @@ $input: #969696 ;
 $input-focus: #1DCB8B;
 $red: #fb4f4f;
 
+.copy {
+
+  background: $blue !important;
+
+}
+
 * { text-decoration: none !important}
 
 body {
@@ -300,4 +306,18 @@ Button {
     background: $red;
     color: $secondary-color;
   }
+}
+
+.notification-bar {
+
+  background-color: $blue !important;
+  color: $secondary-color;
+  font-family: $font-stack !important;
+
+}
+
+.notification-bar-action {
+
+  color: $blue !important;
+
 }

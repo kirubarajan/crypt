@@ -12,11 +12,6 @@ $input: #969696 ;
 $input-focus: #1DCB8B;
 $red: #fb4f4f;
 
-.copy {
-  background: $blue !important;
-  color: $secondary-color !important;
-}
-
 * { text-decoration: none !important}
 
 body {
@@ -292,24 +287,60 @@ Button {
   flex-direction: column;
   height: 100vh;
   justify-content: center;
+
   h1 {
     margin-bottom: 2em !important;
+    margin-bottom: 1em !important;
   }
+
   .site-config-form {
     margin-bottom: 0;
   }
+
   p {
+    clear: left;
     text-align: left;
     margin-bottom: 0.5em;
   }
+
   input {
+    border-radius: 5px !important;
+    margin-bottom: 0.5em !important;
     width: 100% !important;
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .input--copy-functionality {
+    input {
+      float: left;
+      width: 70% !important;
+    }
+
+    button {
+      background: $blue !important;
+      box-shadow: 0px 3px 0px 0px #0f538a;
+      color: $secondary-color !important;
+      margin-top: 0 !important;
+      font: left;
+      width: 20%;
+      &:hover {
+        background: #188ae7 !important;
+        // hacky: on hover, shows white color
+        color: $background !important;
+      }
+    }
+
+    input, button {
+      height: 50px;
+    }
   }
 
   button {
+    border-radius: 5px !important;
     display: flex;
     justify-content: center;
-    transition: all 0.3s ease;
     width: 46%;
     &.button-left {
       float: left;
@@ -318,24 +349,31 @@ Button {
       float: right;
       margin-right: 0 !important;
     }
+    &:active {
+      transform: translate(0px, 3px);
+      box-shadow: 0px 1px 0px 0px;
+    }
   }
 
   .update-button {
     background: $orange;
+    box-shadow: 0px 3px 0px 0px #ad7505;
     &:hover {
-      background: #f7a708;
+      background: #f8b020;
     }
   }
 
   .delete-button {
     background: $red;
+    box-shadow: 0px 3px 0px 0px #960303;
     color: $secondary-color;
     &:hover {
-      background: #fb3737
+      background: #fb3737;
     }
   }
 
   .back-button {
+    box-shadow: 0px 3px 0px 0px #a6a6a6;
     float: left;
     width: 100% !important;
   }

@@ -105,17 +105,24 @@ class SiteConfig extends React.Component {
                 defaultValue={this.state.site.name}
                 ref="name"/>
               <p>Email</p>
-              <input
-                type="text"
-                placeholder="Enter a new email"
-                defaultValue={this.state.site.email}
-                ref="email"/>
+              <div className="input--copy-functionality">
+                <input
+                  type="text"
+                  placeholder="Enter a new email"
+                  defaultValue={this.state.site.email}
+                  ref="email"/>
+                  <Button className="button-right" onClick={this.handleCopyEmailClick.bind(this)}>Copy Email</Button>
+              </div>
+              <br />
               <p>Password</p>
-              <input
-                type="text"
-                placeholder="Enter a new password"
-                defaultValue={this.state.site.password}
-                ref="password"/>
+              <div className="input--copy-functionality">
+                <input
+                  type="text"
+                  placeholder="Enter a new password"
+                  defaultValue={this.state.site.password}
+                  ref="password"/>
+                  <Button className="button-right" onClick={this.handleCopyPasswordClick.bind(this)}>Copy Password</Button> <br />
+              </div>
             </FormGroup>
             <Notification
                isActive={this.state.notification}
@@ -123,8 +130,6 @@ class SiteConfig extends React.Component {
                activeClassName={".notification"}
                onDismiss={this.hideNotification.bind(this)}
              />
-            <Button className="copy button-left" onClick={this.handleCopyEmailClick.bind(this)}>Copy Email</Button>
-            <Button className="copy button-right" onClick={this.handleCopyPasswordClick.bind(this)}>Copy Password</Button> <br />
             <Button className="delete-button button-right" onClick={this.handleDeleteClick.bind(this)}>Delete</Button>
             <Button className="update-button button-left" onClick={this.handleUpdateClick.bind(this)}>Update</Button>
             <Link to='/accounts'><Button className="back-button">Back</Button></Link>

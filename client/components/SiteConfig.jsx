@@ -66,31 +66,34 @@ class SiteConfig extends React.Component {
         <div className="site-config">
           <h1> {this.state.site.name} Account </h1>
           <Form>
-            <FormGroup>
+            <FormGroup className="site-config-form">
+              <p>Website Name</p>
               <input
                 autoFocus
                 type="text"
                 placeholder="Enter a new website name"
                 defaultValue={this.state.site.name}/>
+              <p>Email</p>
               <input
                 type="text"
                 placeholder="Enter a new email"
                 defaultValue={this.state.site.email}/>
+              <p>Password</p>
               <input
                 type="text"
                 placeholder="Enter a new password"
                 defaultValue={this.state.site.password}/>
             </FormGroup>
-            <Button className="delete-button copy" onClick={this.handleCopyEmailClick.bind(this)}>Copy Email</Button>
-            <Button className="delete-button copy" onClick={this.handleCopyPasswordClick.bind(this)}>Copy Password</Button> <br />
             <Notification
                isActive={this.state.notification}
                message={"Copied to clipboard!"}
                activeClassName={".notification"}
                onDismiss={this.hideNotification.bind(this)}
              />
-            <Link to='/accounts'><Button>Back</Button></Link>
-            <Button className="delete-button" onClick={this.handleDeleteClick.bind(this)}>Delete</Button>
+            <Button className="copy button-left" onClick={this.handleCopyEmailClick.bind(this)}>Copy Email</Button>
+            <Button className="copy button-right" onClick={this.handleCopyPasswordClick.bind(this)}>Copy Password</Button> <br />
+            <Link to='/accounts'><Button className=" button-left">Back</Button></Link>
+            <Button className="delete-button button-right" onClick={this.handleDeleteClick.bind(this)}>Delete</Button>
           </Form>
 
           <div data-bttnio-id="btn-4307f29c2502fce0" data-bttnio-context='{ "user_location": { "latitude": 40.6827, "longitude": -73.9754 }, "subject_location": { "latitude": 40.7382869, "longitude": -73.9823721 } }'></div>

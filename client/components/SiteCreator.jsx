@@ -21,12 +21,6 @@ class SiteCreator extends React.Component {
               placeholder="Website Name"
               ref="website" />
           </FormGroup>
-          {/* <FormGroup>
-            <input
-              type="text"
-              placeholder="URL"
-              ref="url" />
-          </FormGroup> */}
           <Button>Create</Button>
         </Form>
 

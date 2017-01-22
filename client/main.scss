@@ -13,9 +13,8 @@ $input-focus: #1DCB8B;
 $red: #fb4f4f;
 
 .copy {
-
   background: $blue !important;
-
+  color: $secondary-color !important;
 }
 
 * { text-decoration: none !important}
@@ -68,6 +67,12 @@ input {
   transition: border 0.3s !important;
 }
 
+input:after {
+  content: '';
+  display: block;
+  width: 0;
+}
+
 input:focus {
   border-bottom: solid 2px $input-focus !important;
   outline: none;
@@ -82,6 +87,9 @@ Button {
   margin-top: 25px !important;
   border-radius: 0 !important;
   border: none !important;
+  &:focus {
+    outline: 0 !important;
+  }
 }
 
 .signin {
@@ -115,7 +123,7 @@ Button {
 .site-creator-container {
   padding: 0 !important;
   .site-creator {
-    background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ),url('https://d13yacurqjgara.cloudfront.net/users/936407/screenshots/2449702/sad_dino_1nstudio.gif');
+    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ),url('https://d13yacurqjgara.cloudfront.net/users/936407/screenshots/2449702/sad_dino_1nstudio.gif');
     background-size: cover;
     height: 100vh;
     h1 {
@@ -300,21 +308,45 @@ Button {
   flex-direction: column;
   height: 100vh;
   justify-content: center;
+  h1 {
+    margin-bottom: 2em !important;
+  }
+  .site-config-form {
+    margin-bottom: 0;
+  }
+  p {
+    text-align: left;
+    margin-bottom: 0.5em;
+  }
   input {
-    width: 40vw;
+    width: 100% !important;
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease;
+    width: 46%;
+    &.button-left {
+      float: left;
+    }
+    &.button-right {
+      float: right;
+      margin-right: 0 !important;
+    }
   }
   .delete-button {
     background: $red;
     color: $secondary-color;
+    &:hover {
+      background: #fb3737
+    }
   }
 }
 
 .notification-bar {
-
-  background-color: $blue !important;
+  background-color: $input-focus !important;
   color: $secondary-color;
-  font-family: $font-stack !important;
-
+  font-family: $secondary-font-stack !important;
 }
 
 .notification-bar-action {

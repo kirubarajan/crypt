@@ -29,7 +29,7 @@ class Signup extends React.Component {
         <div className="row align-items-sm-center justify-content-sm-center">
           <div className="col col-sm-6 offset-sm-3">
             <h1 className="header-signup">SIGN UP</h1>
-            <Form onSubmit={this.createAccount.bind(this)}>
+            <Form onSubmit={this.createAccount.bind(this)} className="signup-form">
               <FormGroup>
                 <input type="email" name="email" id="exampleEmail" placeholder="Email" ref="email"/>
               </FormGroup>
@@ -39,7 +39,7 @@ class Signup extends React.Component {
               <FormGroup>
                 <input type="password" name="password" id="examplePassword" placeholder="Repeat Password" ref="passwordMatch"/>
               </FormGroup>
-              <Button className="create-account">CREATE ACCOUNT</Button>
+              <Button className="create-account home-button"><p>CREATE ACCOUNT</p></Button>
             </Form>
           </div>
         </div>

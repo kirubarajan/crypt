@@ -20,16 +20,16 @@ class Home extends React.Component {
     const password = this.refs.password.value;
     console.log(email, password);
     Meteor.loginWithPassword(email, password);
-    browserHistory.push('/core');
+    browserHistory.push('/accounts');
   }
 
   render() {
     return (
       <div className="container one-edge-shadow">
-        <div className="row align-items-sm-center justify-content-sm-center">
-          <div className="col-left col col-md-6 col-sm-12">
+        <div className="row align-items-sm-center justify-content-sm-center home-row">
+          <div className="col-left col col-md-6 col-sm-12 home-container">
             <h1>SIGN IN</h1>
-            <Form onSubmit={this.onLogin.bind(this)}>
+            <Form onSubmit={this.onLogin.bind(this)} className="home-form">
              <FormGroup>
                <input type="email" name="email" id="exampleEmail" placeholder="Email" ref="email"/>
              </FormGroup>
@@ -37,9 +37,9 @@ class Home extends React.Component {
                <input type="password" name="password" id="examplePassword" placeholder="Password" ref="password"/>
              </FormGroup>
              <Link to='/signup'>
-              <Button className="register">REGISTER</Button>
-              </Link>
-               <Button className="signin">SIGN IN</Button>
+              <Button className="home-button register"><p>REGISTER</p></Button>
+            </Link>
+               <Button className="home-button signin"><p>SIGN IN</p></Button>
            </Form>
           </div>
           <div className="col-right col col-md-6 col-xs-12">

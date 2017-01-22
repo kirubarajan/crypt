@@ -28,8 +28,22 @@ h1 {
   font-weight: 300 !important;
 }
 
+.signup-form {
+  input {
+    width: 100% !important;
+  }
+
+  button {
+    background: $signin !important;
+    box-shadow: 0px 3px 0px 0px #169c6b;
+    width: 100% !important;
+  }
+}
+
 .header-signup {
+  font-weight: 700 !important;
   padding-top: 50px !important;
+  width: 100% !important;
 }
 
 .container {
@@ -91,14 +105,56 @@ Button {
   }
 }
 
-.signin {
-  background-color: $signin !important;
-  color: #FFF !important;
+.home-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5em;
+  h1 {
+    font-weight: 700 !important;
+  }
+  input {
+    width: 100% !important;
+  }
+}
+
+.home-form {
+  width: 80%;
+}
+
+.home-button {
+  align-items: center;
+  border-radius: 5px !important;
+  color: $secondary-color !important;
+  display: flex !important;
+  justify-content: center;
+  margin: 0 auto !important;
+  width: 40%;
+  p {
+    margin-bottom: 0;
+  }
+  &:active {
+    transform: translate(0px, 3px);
+    box-shadow: 0px 1px 0px 0px;
+    color: $orange !important;
+    p {
+      color: $secondary-color !important;
+    }
+  }
 }
 
 .register {
-  color: $dark-grey !important;
+  box-shadow: 0px 3px 0px 0px #a6a6a6;
   border-color: $grey !important;
+  color: $dark-grey !important;
+  float: left;
+}
+
+.signin {
+  background: $signin !important;
+  box-shadow: 0px 3px 0px 0px #169c6b;
+  float: right;
 }
 
 .create-account {
@@ -130,6 +186,7 @@ Button {
   .site-creator {
     background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url('https://d13yacurqjgara.cloudfront.net/users/936407/screenshots/2449702/sad_dino_1nstudio.gif');
     background-size: cover;
+    background-position: center;
     height: 100vh;
     h1 {
       font-weight: 700 !important;
@@ -275,9 +332,16 @@ Button {
 }
 
 .landing-button {
+  background: $signin !important;
   border-radius: 5px !important;
-  box-shadow: 0px 3px 0px 0px #a6a6a6;
+  box-shadow: 0px 3px 0px 0px #169c6b;
+  display: block!important;
+  height: 3.5em !important;
   margin: 0 auto !important;
+  &:active {
+    transform: translate(0px, 3px);
+    box-shadow: 0px 1px 0px 0px;
+  }
 }
 
 .site-config {

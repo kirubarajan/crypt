@@ -8,6 +8,8 @@ import { Profiles } from '../../imports/collections/profiles';
 import copy from 'copy-to-clipboard';
 import { Notification } from 'react-notification';
 
+import UseButton from './UseButton';
+
 class SiteConfig extends React.Component {
 
     constructor(props) {
@@ -28,6 +30,7 @@ class SiteConfig extends React.Component {
       this.setState({
         site: this.props.profiles.find(x => x._id === this.props.params.profile)
       });
+
     }
 
     hideNotification() {
@@ -97,7 +100,6 @@ class SiteConfig extends React.Component {
               <p>Website Name</p>
               <input
                 className="hvr-underline-from-left"
-                autoFocus
                 type="text"
                 placeholder="Enter a new website name"
                 defaultValue={this.state.site.name}
@@ -128,7 +130,7 @@ class SiteConfig extends React.Component {
             <Link to='/accounts'><Button className="back-button">Back</Button></Link>
           </Form>
 
-          <div data-bttnio-id="btn-4307f29c2502fce0" data-bttnio-context='{ "user_location": { "latitude": 40.6827, "longitude": -73.9754 }, "subject_location": { "latitude": 40.7382869, "longitude": -73.9823721 } }'></div>
+          <UseButton profile={this.state.site.name} />
 
         </div>
       );

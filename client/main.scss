@@ -34,7 +34,7 @@ h1 {
 }
 
 .header-signup {
-  margin-top: 50px !important;
+  padding-top: 50px !important;
 }
 
 .container {
@@ -109,7 +109,7 @@ Button {
 }
 
 .col-left {
-  margin-top: 130px !important;
+  padding-top: 50px;
 }
 
 .col-right {
@@ -118,6 +118,12 @@ Button {
    background-position: 50% 50%;
    background-repeat: no-repeat;
    background-size: cover;
+}
+
+@media (max-width: 775px) {
+  .col-right {
+     background: none;
+  }
 }
 
 .site-creator-container {

@@ -27,7 +27,7 @@ class Home extends React.Component {
     return (
       <div className="container one-edge-shadow">
         <div className="row align-items-sm-center justify-content-sm-center">
-          <div className="col-left col col-sm-6">
+          <div className="col-left col col-md-6 col-sm-12">
             <h1>SIGN IN</h1>
             <Form onSubmit={this.onLogin.bind(this)}>
              <FormGroup>
@@ -42,7 +42,7 @@ class Home extends React.Component {
                <Button className="signin">SIGN IN</Button>
            </Form>
           </div>
-          <div className="col-right col col-sm-6">
+          <div className="col-right col col-md-6 col-xs-12">
           </div>
         </div>
      </div>

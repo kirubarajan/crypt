@@ -111,7 +111,7 @@ class SiteConfig extends React.Component {
                   placeholder="Enter a new email"
                   value={this.state.site.email}
                   ref="email"/>
-                  <Button className="button-right" onClick={this.handleCopyEmailClick.bind(this)}>Copy</Button>
+                  <Button className="button-right" onClick={this.handleCopyEmailClick.bind(this)}><p>Copy</p></Button>
               </div>
               <br />
               <p>Password</p>
@@ -121,7 +121,7 @@ class SiteConfig extends React.Component {
                   placeholder="Enter a new password"
                   value={this.state.site.password}
                   ref="password"/>
-                  <Button className="button-right" onClick={this.handleCopyPasswordClick.bind(this)}>Copy</Button> <br />
+                  <Button className="button-right" onClick={this.handleCopyPasswordClick.bind(this)}><p>Copy</p></Button> <br />
               </div>
             </FormGroup>
             <Notification

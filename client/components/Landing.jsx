@@ -11,7 +11,7 @@ class Landing extends React.Component {
         <p className="landing-paragraph"> easily  <span className="create">create</span> & <span className="manage">manage</span> secure emails & passwords.</p>
         <img className="landing-img center-block" src="images/main-logo.png" />
         <Link to='/home'>
-          <Button className="hvr-underline-from-center">BEGIN</Button>
+          <Button className="landing-button">BEGIN</Button>
         </Link>
       </div>
 

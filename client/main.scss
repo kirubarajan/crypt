@@ -177,6 +177,10 @@ Button {
       border-bottom: 0;
     }
 
+    &:nth-child(odd) {
+      border-left: 0;
+    }
+
     &:hover {
       background: #13865c;
       cursor: pointer;
@@ -270,43 +274,10 @@ Button {
   margin-bottom: 30px !important;
 }
 
-.hvr-underline-from-center {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
-  position: relative;
-  overflow: hidden;
-  background-color: $signin !important;
-  font-family: $secondary-font-stack !important;
-  padding: 15px 60px 15px 60px !important;
-  display: block!important;
-  color: #FFF !important;
-  text-align: center !important;
-  margin-left: auto!important;
-  margin-right: auto!important;
-}
-
-.hvr-underline-from-center:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 50%;
-  right: 50%;
-  bottom: 0;
-  background: #FFF;
-  height: 4px;
-  -webkit-transition-property: left, right;
-  transition-property: left, right;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
-  left: 0;
-  right: 0;
+.landing-button {
+  border-radius: 5px !important;
+  box-shadow: 0px 3px 0px 0px #a6a6a6;
+  margin: 0 auto !important;
 }
 
 .site-config {
@@ -356,6 +327,9 @@ Button {
       width: 20%;
       &:hover {
         background: #188ae7 !important;
+        p {
+          color: $secondary-color !important;
+        }
         // hacky: on hover, shows white color
         color: $background !important;
       }

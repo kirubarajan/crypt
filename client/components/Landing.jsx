@@ -6,13 +6,14 @@ class Landing extends React.Component {
   render() {
     return (
     <div>
-      <div className="landing col col-xs-12">
-        <h1 className="landing-header"> CRYPT </h1>
-        <p className="landing-paragraph"> easily  <span className="create">create</span> & <span className="manage">manage</span> secure emails & passwords.</p>
-        <img className="landing-img center-block" src="images/main-logo.png" />
-        <Link to='/home'>
-          <Button className="landing-button">BEGIN</Button>
-        </Link>
+      <div className="landing__splash col col-xs-12">
+        <h1>Crypt</h1>
+        <p>easily  <span>create</span> & <span>manage</span></p>
+        <p>secure emails & passwords.</p>
+        <img src="images/main-logo.png" />
+        {/* <Link to='/home'> */}
+          <button>Begin</button>
+        {/* </Link> */}
       </div>
 
       <div className="landing-info col col-xs-12">

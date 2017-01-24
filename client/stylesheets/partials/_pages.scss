@@ -1,0 +1,41 @@
+.landing__splash {
+  background: url('images/background.png');
+  background-color: $background;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $secondary-color;
+  height: 110vh;
+  text-align: center;
+
+  h1 {
+    font-size: $h1-font-size;
+    font-weight: $bold;
+    margin-top: 8rem;
+  }
+
+  p {
+    span {
+      color: $blue;
+      &:last-child {
+        color: $orange;
+      }
+    }
+    margin-bottom: 0;
+  }
+
+  img {
+    margin-top: 5rem;
+    width: 13.75em;
+  }
+
+  button {
+    font-size: 1rem;
+    display: block;
+    font-family: $secondary-font;
+    margin: 8rem auto 0 auto;
+    text-transform: uppercase;
+
+    @include button($green, $black, 3.4375em, 9.375em);
+  }
+}

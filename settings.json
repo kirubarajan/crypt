@@ -1,8 +1,0 @@
-{
-  "galaxy.meteor.com": {
-     "env": {
-       "ROOT_URL": "https://plsencrypt.me",
-       "MONGO_URL": "mongodb://client:jeffeatsass@ds117889.mlab.com:17889/plsencrypt"
-     }
-   }
-}

@@ -30,12 +30,63 @@
   }
 
   button {
+    font-family: $secondary-font;
     font-size: 1rem;
     display: block;
-    font-family: $secondary-font;
     margin: 8rem auto 0 auto;
     text-transform: uppercase;
 
     @include button($green, $black, 3.4375em, 9.375em);
+  }
+}
+
+.landing__info {
+  align-items: center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60vh;
+  img {
+    width: 14.0625em;
+  }
+
+  p {
+    color: $dark-grey;
+    font-size: 0.9375em;
+    margin-top: 2em;
+    text-align: center;
+    width: 40%;
+    a {
+      color: $dark-red;
+      &:last-child {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.landing__footer {
+  align-items: center;
+  background: $green;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  height: 7vh;
+
+  p {
+    color: $dark-green;
+    font-size: 0.8em;
+    font-weight: $bold;
+    margin-bottom: 0;
+    a {
+      color: $dark-green;
+    }
   }
 }

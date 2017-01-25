@@ -9,7 +9,7 @@ Meteor.methods({
 
     // generating email
 
-    let email = crypto.randomBytes(8).toString('hex') + '@mail.plsencrypt.me';
+    let email = crypto.randomBytes(8).toString('hex') + '@mail.getcrypt.co';
 
     // generating password
 

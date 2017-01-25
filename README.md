@@ -1,7 +1,5 @@
 # crypt
 
-Winner of PennApps XV's Best Security Award and Best Implementation of the Button API 🎉🎉🎉
-
 ![ScreenShot](http://i.imgur.com/sZjuyZp.png)
 
 A powerful account management system that secures all your internet identities - from email to password generation.

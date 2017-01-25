@@ -1,3 +1,7 @@
+body {
+  background: $background !important;
+}
+
 .landing__splash {
   background: url('images/background.png');
   background-color: $background;
@@ -40,8 +44,23 @@
   }
 }
 
+@media (max-device-width: 500px) {
+  .landing__splash {
+    img {
+      margin-top: 5em;
+      width: 10em;
+    }
+
+    button {
+      margin-top: 3em;
+    }
+  }
+}
+
+
 .landing__info {
   align-items: center;
+  background: $secondary-color;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -50,6 +69,7 @@
   flex-direction: column;
   justify-content: center;
   height: 60vh;
+
   img {
     width: 14.0625em;
   }
@@ -65,6 +85,27 @@
       &:last-child {
         color: $blue;
       }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .landing__info {
+    img {
+      width: calc(10em + 0.5vh);
+    }
+
+    p {
+      font-size: calc(0.6em + 0.5vh);
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .landing__info {
+    img {
+      margin-top: 1.5em;
     }
   }
 }

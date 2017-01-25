@@ -27,7 +27,7 @@ class Landing extends React.Component {
       </div>
 
       <div className="landing__footer col col-xs-12">
-        <p className="landing-paragraph landing-footer-paragraph"> made by <a href="https://github.com/a19n" target="_blank">arun</a>, brian, <a href="https://github.com/jeffzhangg" target="_blank">jeff</a> and <a href="https://github.com/JevinSidhu" target="_blank">jevin</a></p>
+        <p className="landing-paragraph landing-footer-paragraph">made by <a href="https://github.com/a19n" target="_blank">arun</a>, brian, <a href="https://github.com/jeffzhangg" target="_blank">jeff</a> and <a href="https://github.com/JevinSidhu" target="_blank">jevin</a></p>
       </div>
 
     </div>

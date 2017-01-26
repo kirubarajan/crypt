@@ -11,9 +11,9 @@ class Landing extends React.Component {
         <p>easily  <span>create</span> & <span>manage</span></p>
         <p>secure emails & passwords.</p>
         <img src="images/main-logo.png" />
-        {/* <Link to='/home'> */}
+        <Link to='/login'>
           <button>Begin</button>
-        {/* </Link> */}
+        </Link>
       </div>
 
       <div className="landing__info col col-xs-12">

@@ -23,12 +23,14 @@ class Signup extends React.Component {
       console.log(Meteor.users.findOne({username: email}));
     }
   }
+
+
   render() {
     return (
       <div className="container one-edge-shadow">
         <div className="row align-items-sm-center justify-content-sm-center">
           <div className="col col-sm-6 offset-sm-3">
-            <h1 className="header-signup">SIGN UP</h1>
+            <h1 className="header-signup">Sign Up</h1>
             <Form onSubmit={this.createAccount.bind(this)} className="signup-form">
               <FormGroup>
                 <input type="email" name="email" id="exampleEmail" placeholder="Email" ref="email"/>
@@ -39,7 +41,7 @@ class Signup extends React.Component {
               <FormGroup>
                 <input type="password" name="password" id="examplePassword" placeholder="Repeat Password" ref="passwordMatch"/>
               </FormGroup>
-              <Button className="create-account home-button"><p>CREATE ACCOUNT</p></Button>
+              <Button className="create-account home-button"><p>Create Account</p></Button>
             </Form>
           </div>
         </div>

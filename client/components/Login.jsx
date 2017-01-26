@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Link, browserHistory } from 'react-router';
 
-class Home extends React.Component {
+class Login extends React.Component {
 
   componentWillMount() {
 
@@ -25,10 +25,11 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="container one-edge-shadow">
-        <div className="row align-items-sm-center justify-content-sm-center home-row">
-          <div className="col-left col col-md-6 col-sm-12 home-container">
-            <h1>SIGN IN</h1>
+      <div className=" logincontainer one-edge-shadow">
+        <div className="row">
+
+          <div className="col col-md-6 col-sm-12">
+            <h1>Login</h1>
             <Form onSubmit={this.onLogin.bind(this)} className="home-form">
              <FormGroup>
                <input type="email" name="email" id="exampleEmail" placeholder="Email" ref="email"/>
@@ -36,13 +37,15 @@ class Home extends React.Component {
              <FormGroup>
                <input type="password" name="password" id="examplePassword" placeholder="Password" ref="password"/>
              </FormGroup>
+
+             <Button className="home-button signin"><p>Enter</p></Button>
              <Link to='/signup'>
-              <Button className="home-button register"><p>REGISTER</p></Button>
+              <Button className="home-button register"><p>Reigster</p></Button>
             </Link>
-               <Button className="home-button signin"><p>SIGN IN</p></Button>
            </Form>
           </div>
-          <div className="col-right col col-md-6 col-xs-12">
+
+          <div className="col col-md-6 col-xs-12">
           </div>
         </div>
      </div>
@@ -50,4 +53,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Login;

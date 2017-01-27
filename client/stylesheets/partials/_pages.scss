@@ -33,14 +33,12 @@ body {
     width: 13.75em;
   }
 
+
+  @include button($green, $black, 3em, 10em);
   button {
-    font-family: $secondary-font;
     font-size: 1rem;
     display: block;
     margin: 8rem auto 0 auto;
-    text-transform: uppercase;
-
-    @include button($green, $black, 3em, 10em);
   }
 }
 
@@ -130,4 +128,67 @@ body {
       color: $dark-green;
     }
   }
+}
+
+.login {
+  padding: 4.5em 5em;
+}
+
+.login__wrapper {
+  height: 80vh;
+}
+
+.login__form {
+  align-items: center;
+  background: $orange;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-right: 0 !important;
+
+  h1 {
+    color: darken($orange, 30%);
+    font-weight: $bold;
+  }
+
+  p {
+    font-family: $primary-font;
+    font-weight: $regular;
+  }
+
+  form {
+    text-align: center;
+    width: 75%;
+
+    @include input;
+    input {
+      width: 100%;
+    }
+
+    @include button($green, $secondary-color, 3em, 12em);
+    button {
+      margin-top: 2em;
+    }
+  }
+
+  .login__form__small-paragraph {
+    font-size: 0.95em;
+    margin-top: 0.5em;
+    &:hover {
+      color: #0275d8;
+    }
+  }
+}
+
+.login__splash {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('https://d13yacurqjgara.cloudfront.net/users/99875/screenshots/2002428/jurassic-park2.gif');
+  background-position: 50% 50%;
+  background-repeat: none;
+  background-size: cover;
+  height: 100%;
 }

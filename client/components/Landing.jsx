@@ -1,8 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class Landing extends React.Component {
+  handleButtonClick(event) {
+    event.preventDefault();
+    console.log('fired');
+    browserHistory.push('/login')
+  }
+
   render() {
     return (
     <div>
@@ -11,9 +17,7 @@ class Landing extends React.Component {
         <p>easily  <span>create</span> & <span>manage</span></p>
         <p>secure emails & passwords.</p>
         <img src="images/main-logo.png" />
-        <Link to='/login'>
-          <button>Begin</button>
-        </Link>
+        <button onClick={this.handleButtonClick}><p>Begin</p></button>
       </div>
 
       <div className="landing__info col col-xs-12">

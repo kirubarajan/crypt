@@ -23,7 +23,7 @@
       color: darken($color, 20%);
       transform: translate(0, 3px);
       p {
-        color: $text-color;
+        color: darken($text-color, 20%);
       }
     }
     &:focus {
@@ -38,6 +38,7 @@
     border: 1px solid $dark-grey;
     border-bottom: 0;
     box-shadow: 0 3px 0 0 $dark-grey;
+    font-family: $secondary-font;
     margin-top: 2em;
     padding: 1em;
     outline: 0;

@@ -131,11 +131,17 @@ body {
 }
 
 .login {
-  padding: 4.5em 5em;
+  padding: 10vh;
+  @media (max-width: 600px) {
+    padding: 5vh 7vh;
+  }
 }
 
 .login__wrapper {
   height: 80vh;
+  @media (max-width: 600px) {
+    height: 90vh;
+  }
 }
 
 .login__form {
@@ -174,6 +180,11 @@ body {
     button {
       margin-top: 2em;
     }
+    @media (max-width: 600px) {
+      button {
+        width: 100%;
+      }
+    }
   }
 
   .login__form__small-paragraph {
@@ -185,10 +196,13 @@ body {
   }
 }
 
-.login__splash {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('https://d13yacurqjgara.cloudfront.net/users/99875/screenshots/2002428/jurassic-park2.gif');
-  background-position: 50% 50%;
-  background-repeat: none;
-  background-size: cover;
-  height: 100%;
+
+@media (min-width: 768px) {
+  .login__splash {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('https://d13yacurqjgara.cloudfront.net/users/99875/screenshots/2002428/jurassic-park2.gif');
+    background-position: 50% 50%;
+    background-repeat: none;
+    background-size: cover;
+    height: 100%;
+  }
 }

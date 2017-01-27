@@ -27,22 +27,16 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className="container one-edge-shadow">
-        <div className="row align-items-sm-center justify-content-sm-center">
-          <div className="col col-sm-6 offset-sm-3">
-            <h1 className="header-signup">Sign Up</h1>
-            <Form onSubmit={this.createAccount.bind(this)} className="signup-form">
-              <FormGroup>
-                <input type="email" name="email" id="exampleEmail" placeholder="Email" ref="email"/>
-              </FormGroup>
-              <FormGroup>
-                <input type="password" name="password" id="examplePassword" placeholder="Password" ref="password"/>
-              </FormGroup>
-              <FormGroup>
-                <input type="password" name="password" id="examplePassword" placeholder="Repeat Password" ref="passwordMatch"/>
-              </FormGroup>
-              <Button className="create-account home-button"><p>Create Account</p></Button>
-            </Form>
+      <div className="signup one-edge-shadow">
+        <div className="signup__form-container row">
+          <div className="signup__form col col-sm-12">
+            <h1>Sign Up</h1>
+            <form onSubmit={this.createAccount.bind(this)}>
+              <input type="email" name="email" id="exampleEmail" placeholder="Email" ref="email"/>
+              <input type="password" name="password" id="examplePassword" placeholder="Password" ref="password"/>
+              <input type="password" name="password" id="examplePassword" placeholder="Repeat Password" ref="passwordMatch"/>
+              <button className="create-account home-button"><p>Create Account</p></button>
+            </form>
           </div>
         </div>
      </div>

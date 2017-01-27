@@ -188,6 +188,7 @@ body {
   }
 
   .login__form__small-paragraph {
+    font-family: $secondary-font;
     font-size: 0.95em;
     margin-top: 0.5em;
     &:hover {
@@ -204,5 +205,60 @@ body {
     background-repeat: none;
     background-size: cover;
     height: 100%;
+  }
+}
+
+.signup {
+  padding: 10vh;
+}
+
+@media (max-width: 600px) {
+  .signup {
+    padding: 0;
+  }
+}
+
+.signup__form-container {
+  background: $orange;
+  height: 80vh;
+
+  .signup__form {
+    align-items: center;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+
+    h1 {
+        font-weight: $bold;
+        color: darken($orange, 30%);
+    }
+
+    @include input;
+    input {
+      width: 90%;
+    }
+
+    @include button($green, $secondary-color, 3em, 12em);
+    button {
+      margin-top: 3em;
+    }
+
+    @media (max-width: 600px) {
+      button {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .signup__form-container {
+    height: 100vh;
   }
 }

@@ -221,7 +221,7 @@ body {
 @media (max-width: 600px) {
   .signup__form-container {
     height: 95vh;
-  }
+    padding: 0;
 }
 
 .signup__form-container {
@@ -260,5 +260,11 @@ body {
         width: 90%;
       }
     }
+  }
+}
+
+@media (max-width: 600px) {
+  .signup__form-container {
+    height: 100vh;
   }
 }

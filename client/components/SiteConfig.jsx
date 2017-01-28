@@ -95,8 +95,7 @@ class SiteConfig extends React.Component {
       return (
         <div className="site-config">
           <h1> {this.state.site.name} Account </h1>
-          <Form>
-            <FormGroup className="site-config-form">
+          <form>
               <p>Website Name</p>
               <input
                 className="hvr-underline-from-left"
@@ -104,36 +103,38 @@ class SiteConfig extends React.Component {
                 placeholder="Enter a new website name"
                 defaultValue={this.state.site.name}
                 ref="name"/>
+
               <p>Email</p>
-              <div className="input--copy-functionality">
+              <div>
                 <input className="no-focus"
                   type="text"
                   placeholder="Enter a new email"
                   value={this.state.site.email}
                   ref="email"/>
-                  <Button className="button-right hide" onClick={this.handleCopyEmailClick.bind(this)}><p>Copy</p></Button>
+                  <button className="site-config__copy-button" onClick={this.handleCopyEmailClick.bind(this)}><p>Copy</p></button>
               </div>
-              <br />
+
               <p>Password</p>
-              <div className="input--copy-functionality">
+              <div>
                 <input className="no-focus"
                   type="text"
                   placeholder="Enter a new password"
                   value={this.state.site.password}
                   ref="password"/>
-                  <Button className="button-right hide" onClick={this.handleCopyPasswordClick.bind(this)}><p>Copy</p></Button> <br />
+                  <button className="site-config__copy-button" onClick={this.handleCopyPasswordClick.bind(this)}><p>Copy</p></button> <br />
               </div>
-            </FormGroup>
+
             <Notification
                isActive={this.state.notification}
                message={"Copied to clipboard!"}
                activeClassName={".notification"}
                onDismiss={this.hideNotification.bind(this)}
              />
-            <Button className="delete-button button-right hide" onClick={this.handleDeleteClick.bind(this)}>Delete</Button>
-            <Button className="update-button button-left hide-center" onClick={this.handleUpdateClick.bind(this)}>Update</Button>
-            <Link to='/accounts'><Button className="back-button">Back</Button></Link>
-          </Form>
+
+            <button className="site-config__update-button" onClick={this.handleUpdateClick.bind(this)}><p>Update</p></button>
+            <button className="site-config__delete-button" onClick={this.handleDeleteClick.bind(this)}><p>Delete</p></button>
+            <Link to='/accounts'><button className="site-config__back-button"><p>Back</p></button></Link>
+          </form>
 
           <UseButton profile={this.state.site.name} />
 

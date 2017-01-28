@@ -33,6 +33,38 @@
   }
 }
 
+@mixin config-button($color, $text-color, $height, $width) {
+  background: $color;
+  border-radius: 5px;
+  box-shadow: 0 3px 0 0 darken($color, 20%);
+  border: 0;
+  color: $text-color;
+  cursor: pointer;
+  height: $height;
+  width: $width;
+  p {
+    color: $text-color;
+    font-family: $secondary-font;
+    font-weight: $regular;
+  }
+  &:hover {
+    background: darken($color, 10%);
+  }
+  &:active {
+    background: darken($color, 20%);
+    box-shadow: 0 1px 0 0;
+    color: darken($color, 20%);
+    outline: 0 !important;
+    transform: translate(0, 3px);
+    p {
+      color: darken($text-color, 20%);
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
 @mixin input {
   input {
     border-radius: 5px;

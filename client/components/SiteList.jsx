@@ -26,7 +26,7 @@ class SiteList extends React.Component {
         onTileClick={this.props.onTileClick}/>
     ));
     return (
-    <div className="row site-list">
+    <div className="row">
       {sites}
       {this.props.sites}
     </div>

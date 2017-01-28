@@ -355,3 +355,69 @@ body {
     text-transform: none;
   }
 }
+
+.site-config {
+  align-items: center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+
+  h1 {
+    color: $orange;
+    font-weight: $bold;
+  }
+
+  form {
+    width: 40%;
+
+    @include input;
+    input {
+      margin-top: 0;
+      width: 100%;
+      &:first-child {
+        width: 75%;
+      }
+    }
+
+    button {
+      font-family: $primary-font;
+      text-transform: none;
+    }
+
+    .site-config__copy-button {
+      @include config-button($blue, $secondary-color, 57px, 20%);
+      float: right;
+      text-transform: none;
+    }
+
+    .site-config__update-button {
+      @include config-button($orange, darken($dark-grey, 30%), 3em, 6em);
+      width: 45%;
+    }
+
+    .site-config__delete-button {
+      @include config-button($red, $secondary-color, 3em, 6em);
+      float: right;
+      width: 45%;
+    }
+
+    .site-config__back-button {
+      @include config-button($secondary-color, darken($dark-grey, 30%), 3em, 6em);
+      width: 100%;
+    }
+
+    .site-config__update-button, .site-config__delete-button {
+      margin-top: 3em;
+    }
+
+    .site-config__back-button {
+      margin-top: 1em;
+    }
+
+  }
+}

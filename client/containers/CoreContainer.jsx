@@ -25,7 +25,7 @@ class CoreContainer extends React.Component {
       if (error) {
         console.log(error.reason);
       } else {
-        
+
       }
 
     });
@@ -47,17 +47,16 @@ class CoreContainer extends React.Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <div className="col col-sm-7 site-creator-container">
+          <div className="site-creator col col-md-7 col-sm-12">
             <SiteCreator
               onCreate={this.handleCreate.bind(this)}/>
           </div>
 
-          <div className="col col-sm-5">
+          <div className="site-list col col-md-5 col-sm-12">
             <SiteList
               sites={this.state.sites}
               onDelete={this.handleDelete}
               onTileClick={this.handleTileClick}/>
-            {/* sites={this.state.sites} */}
           </div>
         </div>
       </div>

@@ -268,3 +268,96 @@ body {
     height: 100vh;
   }
 }
+
+.site-creator {
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url('https://d13yacurqjgara.cloudfront.net/users/936407/screenshots/2449702/sad_dino_1nstudio.gif');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  padding-top: 15%;
+  text-align: center;
+
+  h1 {
+    color: $orange;
+    font-weight: $bold;
+  }
+
+  form {
+    align-items: center;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include input;
+    input {
+      margin-top: 1em;
+      width: 90%;
+    }
+
+    @include button($green, $secondary-color, 3em, 12em);
+    button {
+      margin-top: 2em;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .site-creator {
+    align-items: center;
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ),url('https://d13yacurqjgara.cloudfront.net/users/936407/screenshots/2449702/sad_dino_1nstudio.gif');
+    background-position: center;
+    background-size: cover;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+
+    form {
+      button {
+        margin-top: 1em;
+        width: 90%;
+      }
+    }
+  }
+}
+
+.site-list {
+  background: $green;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.site-list__tile {
+  align-items: center;
+  background: darken($green, 7%);
+  border: 0.5px solid $background;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  height: 33.33vh;
+  &:hover {
+    background: darken($green, 10%);
+  }
+  &:active {
+    background: darken($green, 15%);
+  }
+  &:nth-child(odd) {
+    border-left: 0;
+  }
+  &:nth-child(even) {
+    border-right: 0;
+  }
+
+  h1 {
+    color: $secondary-color;
+    font-weight: $light;
+    text-transform: none;
+  }
+}

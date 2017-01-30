@@ -3,13 +3,21 @@ body {
 }
 
 .landing__splash {
+  align-items: center;
   background: url('images/background.png');
   background-color: $background;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
   color: $secondary-color;
-  height: 110vh;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
   text-align: center;
 
   h1 {

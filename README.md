@@ -12,6 +12,12 @@ Even though more people are beginning to use different passwords for their accou
 
 Crypt solves this by generating cryptographically secure emails that you can sign up for accounts with. All emails are forwarded back to your master email, preventing hackers from gaining access to all of your accounts if one account is compromised and reassuring your privacy by preventing "email lookup" services from identifying you through a common email.
 
+## Sign in with Apple
+
+On June 3, 2019, Apple announced Sign in with Apple which allows you to authenticate against third party
+applications using your Apple ID. You are also given the option for generating a unique forwarding
+address for each login, thus demonstrating the foresight behind crypt.
+
 ## Installation
 
 1. Clone the project repository
